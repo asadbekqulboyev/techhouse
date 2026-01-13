@@ -1,475 +1,718 @@
 <!DOCTYPE html>
-<html class="light" lang="uz"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>TechHouse - Uy va maishiy texnika</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-<script>
+<html class="light" lang="uz">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TechHouse - Interactive Prototype</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        primary: "#FF6600",
-                        "background-light": "#FFFFFF",
-                        "background-dark": "#0F172A",
+                        "primary": "#ff6600",
+                        "background-light": "#fcfcfc",
+                        "background-dark": "#121212",
+                        "accent-blue": "#f8fafc"
                     },
                     fontFamily: {
-                        sans: ["Inter", "sans-serif"],
+                        "display": ["Space Grotesk", "sans-serif"]
                     },
-                    borderRadius: {
-                        DEFAULT: "12px",
-                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
                 },
             },
-        };
+        }
     </script>
-<style type="text/tailwindcss">
+    <style type="text/tailwindcss">
         @layer base {
-            body { @apply font-sans antialiased; }
+        body {
+          @apply font-display bg-background-light text-[#1d130c] transition-colors duration-300;
         }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .hero-gradient {
-            background: radial-gradient(circle at 70% 50%, #f0f9ff 0%, #ffffff 100%);
-        }
-        .dark .hero-gradient {
-            background: radial-gradient(circle at 70% 50%, #1e293b 0%, #0f172a 100%);
-        }
-        .nav-link {
-            @apply relative py-2 text-[15px] font-semibold text-slate-600 dark:text-slate-300 transition-all duration-300 hover:text-primary;
-        }
-        .nav-link::after {
-            content: '';
-            @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
-        }
-        .nav-link:hover::after {
-            @apply w-full;
-        }
-        .search-container:focus-within {
-            @apply ring-4 ring-primary/10 border-primary;
-        }
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .material-symbols-outlined.filled {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
-<header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl">
-<div class="max-w-[1320px] mx-auto px-4 h-24 flex items-center justify-between gap-10">
-<a class="flex items-center gap-3 flex-shrink-0 group" href="/">
-<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform">
-<span class="material-symbols-outlined text-3xl">home_repair_service</span>
-</div>
-<span class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white uppercase">
-                Tech<span class="text-primary">House</span>
-</span>
-</a>
-<div class="flex-grow max-w-2xl relative group hidden lg:block">
-<div class="search-container flex items-center bg-slate-100 dark:bg-slate-800 border border-transparent rounded-2xl transition-all overflow-hidden h-12">
-<span class="material-symbols-outlined ml-4 text-slate-400">search</span>
-<input class="w-full bg-transparent border-none focus:ring-0 px-4 py-2 text-sm placeholder-slate-500" placeholder="Mahsulot yoki brendni qidiring..." type="text"/>
-<button class="bg-primary hover:bg-orange-600 text-white px-6 h-full font-bold text-sm transition-colors">
-                    Qidirish
-                </button>
-</div>
-</div>
-<div class="flex items-center gap-3">
-<button class="w-12 h-12 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl text-slate-600 dark:text-slate-300 relative transition-colors">
-<span class="material-symbols-outlined">favorite</span>
-<span class="absolute top-2.5 right-2.5 w-4 h-4 bg-primary text-[10px] font-bold text-white flex items-center justify-center rounded-full border-2 border-white dark:border-slate-900">2</span>
-</button>
-<button class="w-12 h-12 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl text-slate-600 dark:text-slate-300 transition-colors">
-<span class="material-symbols-outlined">person</span>
-</button>
-<button class="h-12 px-5 flex items-center gap-3 bg-primary text-white rounded-2xl font-bold shadow-lg shadow-primary/20 hover:bg-orange-600 transition-all hover:-translate-y-0.5">
-<span class="material-symbols-outlined">shopping_bag</span>
-<span class="hidden sm:inline">Savat</span>
-</button>
-</div>
-</div>
-<div class="border-t border-slate-50 dark:border-slate-800/50">
-<div class="max-w-[1320px] mx-auto px-4 h-12 flex items-center gap-10">
-<button class="flex items-center gap-2 text-primary font-bold text-sm">
-<span class="material-symbols-outlined">menu</span>
-                Kategoriyalar
-            </button>
-<nav class="hidden md:flex items-center gap-8">
-<a class="nav-link" href="#">Aksessuarlar</a>
-<a class="nav-link" href="#">Brandlar</a>
-<a class="nav-link" href="#">Yangiliklar</a>
-<a class="nav-link" href="#">Kontaktlar</a>
-<a class="nav-link text-red-500 hover:text-red-600" href="#">Aksiyalar</a>
-</nav>
-</div>
-</div>
-</header>
-<main>
-<section class="hero-gradient relative overflow-hidden min-h-[600px] flex items-center">
-<div class="absolute top-0 right-0 w-1/2 h-full bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4"></div>
-<div class="max-w-[1320px] mx-auto px-4 py-20 relative z-10 grid md:grid-cols-2 gap-12 items-center">
-<div class="space-y-10">
-<div class="space-y-4">
-<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wide uppercase">
-<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                        Yangi mavsum kolleksiyasi
-                    </span>
-<h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.1] text-slate-900 dark:text-white">
-                        Uy va maishiy texnika — 
-                        <span class="relative inline-block">
-<span class="relative z-10 text-primary">qulay va ishonchli</span>
-<span class="absolute bottom-2 left-0 w-full h-3 bg-primary/10 -z-10"></span>
-</span> 
-                        xarid
-                    </h1>
-<p class="text-xl text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
-                        Eng so'nggi texnologiyalar va jahon brendlari endi hamyonbop narxlarda. Sizning qulayligingiz bizning ustuvorligimiz.
-                    </p>
-</div>
-<div class="flex flex-col sm:flex-row items-center gap-6">
-<button class="group relative px-10 py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-extrabold text-lg transition-all hover:scale-105 hover:shadow-2xl shadow-xl overflow-hidden">
-<span class="relative z-10 flex items-center gap-2">
-                            Batafsil ma'lumot
-                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
-</span>
-<div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-</button>
-<div class="flex items-center gap-4">
-<div class="flex -space-x-3">
-<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200"></div>
-<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-300"></div>
-<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-400 flex items-center justify-center text-[10px] font-bold">1k+</div>
-</div>
-<span class="text-sm font-medium text-slate-500">Mamnun mijozlar</span>
-</div>
-</div>
-<div class="flex gap-2">
-<div class="w-12 h-1.5 bg-primary rounded-full"></div>
-<div class="w-4 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full hover:bg-primary/50 transition-colors cursor-pointer"></div>
-<div class="w-4 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full hover:bg-primary/50 transition-colors cursor-pointer"></div>
-</div>
-</div>
-<div class="relative">
-<div class="relative z-20 transition-transform duration-700 hover:scale-105">
-<img alt="Home Appliances Group" class="w-full h-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.15)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4WyGEdb7F5B5XEH7fzKVHnEXgqE5VXw9DXggfqC35PnhK4D-kKKzpOqhJQaB1qujQcb0Qk-Vlhd-nUnlKAzhSJwym96AMRMJQIUTQQOwfu2Zdw3ouzK_xn3K49Jfg7xKMFi5HgBW8j3V9pqz26_r31TU73bk8mZ8pN6oReV1TmDdNEqzGOJXp6HjD2V9Ch-xNSQQnYXqkdhEdQkH_LDjINOdctuNBsx6vg3sO_koj_mkGxNdKDC15926yH9phIPx_2lJ0vi3lB2Ht"/>
-</div>
-<div class="absolute -top-10 -right-4 z-30 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-2xl border border-slate-100 dark:border-slate-700 flex items-center gap-4 animate-bounce">
-<div class="w-10 h-10 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined">verified</span>
-</div>
-<div>
-<p class="text-xs text-slate-500 font-medium">Kafolatlangan</p>
-<p class="text-sm font-bold">3 yilgacha servis</p>
-</div>
-</div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 rounded-full blur-3xl -z-10"></div>
-<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 h-8 bg-slate-900/10 blur-xl rounded-[100%] -z-10"></div>
-</div>
-</div>
-</section>
-<section class="py-20 bg-white dark:bg-background-dark">
-<div class="max-w-[1320px] mx-auto px-4">
-<div class="flex items-center justify-between mb-12">
-<h2 class="text-3xl font-extrabold tracking-tight">Mashhur kategoriyalar</h2>
-<a class="group flex items-center gap-1 text-primary font-bold hover:underline" href="#">
-                    Hammasini ko'rish
-                    <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">chevron_right</span>
-</a>
-</div>
-<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6">
-<div class="flex flex-col items-center gap-4 group cursor-pointer">
-<div class="w-20 h-20 lg:w-24 lg:h-24 rounded-3xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-300">
-<span class="material-symbols-outlined text-4xl text-slate-600 dark:text-slate-400 group-hover:text-white">kitchen</span>
-</div>
-<span class="text-sm font-bold text-center group-hover:text-primary transition-colors">Uy texnikasi</span>
-</div>
-<div class="flex flex-col items-center gap-4 group cursor-pointer">
-<div class="w-20 h-20 lg:w-24 lg:h-24 rounded-3xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-300">
-<span class="material-symbols-outlined text-4xl text-slate-600 dark:text-slate-400 group-hover:text-white">laptop_mac</span>
-</div>
-<span class="text-sm font-bold text-center group-hover:text-primary transition-colors">Elektronika</span>
-</div>
-<div class="flex flex-col items-center gap-4 group cursor-pointer">
-<div class="w-20 h-20 lg:w-24 lg:h-24 rounded-3xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-300">
-<span class="material-symbols-outlined text-4xl text-slate-600 dark:text-slate-400 group-hover:text-white">blender</span>
-</div>
-<span class="text-sm font-bold text-center group-hover:text-primary transition-colors">Kichik texnika</span>
-</div>
-<div class="flex flex-col items-center gap-4 group cursor-pointer">
-<div class="w-20 h-20 lg:w-24 lg:h-24 rounded-3xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-300">
-<span class="material-symbols-outlined text-4xl text-slate-600 dark:text-slate-400 group-hover:text-white">cable</span>
-</div>
-<span class="text-sm font-bold text-center group-hover:text-primary transition-colors">Aksessuarlar</span>
-</div>
-<div class="flex flex-col items-center gap-4 group cursor-pointer">
-<div class="w-20 h-20 lg:w-24 lg:h-24 rounded-3xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-300">
-<span class="material-symbols-outlined text-4xl text-slate-600 dark:text-slate-400 group-hover:text-white">vacuum</span>
-</div>
-<span class="text-sm font-bold text-center group-hover:text-primary transition-colors">Tozalash</span>
-</div>
-<div class="flex flex-col items-center gap-4 group cursor-pointer">
-<div class="w-20 h-20 lg:w-24 lg:h-24 rounded-3xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-300">
-<span class="material-symbols-outlined text-4xl text-slate-600 dark:text-slate-400 group-hover:text-white">ac_unit</span>
-</div>
-<span class="text-sm font-bold text-center group-hover:text-primary transition-colors">I/S texnikasi</span>
-</div>
-<div class="flex flex-col items-center gap-4 group cursor-pointer">
-<div class="w-20 h-20 lg:w-24 lg:h-24 rounded-3xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-300">
-<span class="material-symbols-outlined text-4xl text-slate-600 dark:text-slate-400 group-hover:text-white">styler</span>
-</div>
-<span class="text-sm font-bold text-center group-hover:text-primary transition-colors">Parvarish</span>
-</div>
-<div class="flex flex-col items-center gap-4 group cursor-pointer">
-<div class="w-20 h-20 lg:w-24 lg:h-24 rounded-3xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center group-hover:bg-primary group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-300">
-<span class="material-symbols-outlined text-4xl text-slate-600 dark:text-slate-400 group-hover:text-white">local_shipping</span>
-</div>
-<span class="text-sm font-bold text-center group-hover:text-primary transition-colors">Katta Texnika</span>
-</div>
-</div>
-</div>
-</section>
-<section class="py-20 bg-slate-50 dark:bg-slate-900/50">
-<div class="max-w-[1320px] mx-auto px-4">
-<div class="flex items-center justify-between mb-12">
-<h2 class="text-3xl font-extrabold flex items-center gap-4">
-<span class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center text-white">
-<span class="material-symbols-outlined">local_fire_department</span>
-</span>
-                    Qaynoq takliflar
-                </h2>
-<div class="flex gap-3">
-<button class="w-12 h-12 flex items-center justify-center bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl hover:border-primary hover:text-primary transition-all">
-<span class="material-symbols-outlined">arrow_back</span>
-</button>
-<button class="w-12 h-12 flex items-center justify-center bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl hover:border-primary hover:text-primary transition-all">
-<span class="material-symbols-outlined">arrow_forward</span>
-</button>
-</div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-<div class="bg-white dark:bg-slate-800 rounded-3xl p-5 group relative hover:shadow-2xl transition-all duration-500">
-<div class="absolute top-5 left-5 z-10 bg-red-500 text-white text-[11px] font-black px-2.5 py-1 rounded-lg">-15%</div>
-<button class="absolute top-5 right-5 z-10 w-10 h-10 bg-white/80 dark:bg-slate-700/80 backdrop-blur rounded-xl text-slate-400 hover:text-red-500 transition-colors flex items-center justify-center">
-<span class="material-symbols-outlined text-xl">favorite</span>
-</button>
-<div class="aspect-square mb-6 overflow-hidden rounded-2xl bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
-<img alt="Washing Machine" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSUqO5LUUC8mq7BtOmvTyWzMfdmih2J1HXOgCTD8QjotLrCtOdLBx94Auj4CV9Rv1A0K-bxE78Ll2wam-ivrpWSg-9K6ZYYx9vWy68_Baad-7YLzRJ3Pr4dtJx3UhNdMmVglaD8-VkfCOT9CZe8BNkewsyZ-kSR1U8FqkxQ0l-jZsuR6OGOJFX194eVez1sVUdrTSnAyHlLpY8MJjKaW5-oFB_fFBtT9JiH7NAJLn836FOFDfnTFCsyc8qdSnipUUVzWM65wDd6U9i"/>
-</div>
-<div class="space-y-4">
-<h3 class="text-sm font-bold text-slate-800 dark:text-slate-200 line-clamp-2 h-10 leading-snug">Samsung Kir yuvish mashinasi 8kg, Inverter</h3>
-<div class="flex flex-col">
-<span class="text-[11px] text-slate-400 line-through font-medium">6 500 000 so'm</span>
-<span class="text-lg font-black text-primary">5 525 000 so'm</span>
-</div>
-<button class="w-full bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary py-3.5 rounded-2xl text-sm font-black transition-all flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-xl">shopping_cart</span>
-                            Savatga
-                        </button>
-</div>
-</div>
-<div class="bg-white dark:bg-slate-800 rounded-3xl p-5 group relative hover:shadow-2xl transition-all duration-500">
-<div class="absolute top-5 left-5 z-10 bg-red-500 text-white text-[11px] font-black px-2.5 py-1 rounded-lg">-10%</div>
-<button class="absolute top-5 right-5 z-10 w-10 h-10 bg-white/80 dark:bg-slate-700/80 backdrop-blur rounded-xl text-slate-400 hover:text-red-500 transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-xl">favorite</span></button>
-<div class="aspect-square mb-6 overflow-hidden rounded-2xl bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
-<img alt="Fridge" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsKlrJK9Gjov1LP3SFsvPdifTCCOtHse1EEWgo0gTZwaLtCfjnmErQhDgqvBQdi5ZoZrpwpFjRoa_hwRWTYWqlQT34KHRU8YB4CuJY-Sx7m8ikpUrPDIS6urx7CAQ8knaum4jvpc68hw0o-d6C8XVvhMCpaBw0DEzUZ0myC5cUqansGJdcOhjHgzFQlLAN8NQkDP14fTVa-mzf9xJW-e8a0b-eiHA9Qq9gp1t725OPcJ8zjDuMcA6RxcLEEu9fQfwUDoAN3uiVuF1O"/>
-</div>
-<div class="space-y-4">
-<h3 class="text-sm font-bold text-slate-800 dark:text-slate-200 line-clamp-2 h-10 leading-snug">Bosch Sovutgich - NoFrost MultiAirflow</h3>
-<div class="flex flex-col">
-<span class="text-[11px] text-slate-400 line-through font-medium">12 000 000 so'm</span>
-<span class="text-lg font-black text-primary">10 800 000 so'm</span>
-</div>
-<button class="w-full bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary py-3.5 rounded-2xl text-sm font-black transition-all flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-xl">shopping_cart</span>
-                            Savatga
-                        </button>
-</div>
-</div>
-<div class="bg-white dark:bg-slate-800 rounded-3xl p-5 group relative hover:shadow-2xl transition-all duration-500">
-<div class="absolute top-5 left-5 z-10 bg-red-500 text-white text-[11px] font-black px-2.5 py-1 rounded-lg">-20%</div>
-<button class="absolute top-5 right-5 z-10 w-10 h-10 bg-white/80 dark:bg-slate-700/80 backdrop-blur rounded-xl text-slate-400 hover:text-red-500 transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-xl">favorite</span></button>
-<div class="aspect-square mb-6 overflow-hidden rounded-2xl bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
-<img alt="Monitor" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLk0I6X7htYOw7CJItmCgUQqy41W9O0rsZV2inIYKpPmwyWQt5wiYvXgaTKmg7WU4APEJTaPW-YJ5dIafIzYNHNV-lFqWvj1WnzPKla5FqSr1qXHt60aUClVWMb4guXmJzaFvfVuSFAFnMhDa-RHUK3KW6Wb9Ok-LiqiURrjc9w3-DlDDhpjirfHJCXgAEVFPLnivSJ0EU6BBRZZj5lFaWoyUFJAT5aporms85IxwDVithQE-ERj_yp1kEuOJDLmS9aT3xAzeXcWRV"/>
-</div>
-<div class="space-y-4">
-<h3 class="text-sm font-bold text-slate-800 dark:text-slate-200 line-clamp-2 h-10 leading-snug">LG UltraWide Monitor 34' IPS QHD</h3>
-<div class="flex flex-col">
-<span class="text-[11px] text-slate-400 line-through font-medium">4 200 000 so'm</span>
-<span class="text-lg font-black text-primary">3 360 000 so'm</span>
-</div>
-<button class="w-full bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary py-3.5 rounded-2xl text-sm font-black transition-all flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-xl">shopping_cart</span>
-                            Savatga
-                        </button>
-</div>
-</div>
-<div class="bg-white dark:bg-slate-800 rounded-3xl p-5 group relative hover:shadow-2xl transition-all duration-500">
-<div class="absolute top-5 left-5 z-10 bg-red-500 text-white text-[11px] font-black px-2.5 py-1 rounded-lg">-5%</div>
-<button class="absolute top-5 right-5 z-10 w-10 h-10 bg-white/80 dark:bg-slate-700/80 backdrop-blur rounded-xl text-slate-400 hover:text-red-500 transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-xl">favorite</span></button>
-<div class="aspect-square mb-6 overflow-hidden rounded-2xl bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
-<img alt="Headphones" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRSQpPi5wbOdR_888kPeKcdO3UjdDKv-sQCkAaItLlBlp19y_k2yubMsM8rQmfFV0AofVUs99g7OO246M9IhXLeucnu4igkGifBmizxaOTo3fMIrXNy7EgSUOh122yBVbB2V3jzG_p0AdHM-5ECfSp9jBdlVckBqtnX_2d33aEXWXoJYlQ60NNDgcq2vSVoVazFdMdoxcisFvyTjs4aW5sme9ZNddXpnb5Ax9QXqMLcY-XbNSMS8-st0ZKxa-8WxR_GQoNhmxvaf0f"/>
-</div>
-<div class="space-y-4">
-<h3 class="text-sm font-bold text-slate-800 dark:text-slate-200 line-clamp-2 h-10 leading-snug">Sony WH-1000XM4 Noise Cancelling</h3>
-<div class="flex flex-col">
-<span class="text-[11px] text-slate-400 line-through font-medium">3 800 000 so'm</span>
-<span class="text-lg font-black text-primary">3 610 000 so'm</span>
-</div>
-<button class="w-full bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary py-3.5 rounded-2xl text-sm font-black transition-all flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-xl">shopping_cart</span>
-                            Savatga
-                        </button>
-</div>
-</div>
-<div class="bg-white dark:bg-slate-800 rounded-3xl p-5 group relative hover:shadow-2xl transition-all duration-500">
-<div class="absolute top-5 left-5 z-10 bg-red-500 text-white text-[11px] font-black px-2.5 py-1 rounded-lg">-12%</div>
-<button class="absolute top-5 right-5 z-10 w-10 h-10 bg-white/80 dark:bg-slate-700/80 backdrop-blur rounded-xl text-slate-400 hover:text-red-500 transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-xl">favorite</span></button>
-<div class="aspect-square mb-6 overflow-hidden rounded-2xl bg-slate-50 dark:bg-slate-900 flex items-center justify-center p-4">
-<img alt="Tablet" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8VD1sWAy2Q3f8pLwOEqv6QO-RegbWifekQvADMvPUbS_MWSqcsPuQkdZBP7V70FT-NECExmrx1YvRMKm4_g6PWO4nAJnPmsZBmn8UXLb45UCq3siugqutV-gA-kWLi4wmR2oZiRUEIhTY0LUBDl6-tXp2aDgrXEPD6WS6xGD-6mSHiJqv18WQSZTf6aa18t2x852ymX1i38v7doWxSjcV-9ytnmFxIGq04YZJE18WTIcRPb_rjv3EOK1OhwC1IKWBGuhNTwSAF7Il"/>
-</div>
-<div class="space-y-4">
-<h3 class="text-sm font-bold text-slate-800 dark:text-slate-200 line-clamp-2 h-10 leading-snug">iPad Pro 11-inch M2 Chip 256GB</h3>
-<div class="flex flex-col">
-<span class="text-[11px] text-slate-400 line-through font-medium">11 200 000 so'm</span>
-<span class="text-lg font-black text-primary">9 856 000 so'm</span>
-</div>
-<button class="w-full bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary py-3.5 rounded-2xl text-sm font-black transition-all flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-xl">shopping_cart</span>
-                            Savatga
-                        </button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-20 bg-white dark:bg-background-dark border-y border-slate-50 dark:border-slate-800">
-<div class="max-w-[1320px] mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-<div class="flex items-center gap-5 group">
-<div class="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined text-4xl text-primary group-hover:text-white">local_shipping</span>
-</div>
-<div>
-<h4 class="font-extrabold text-lg">Tezkor yetkazib berish</h4>
-<p class="text-sm text-slate-500 font-medium">O'zbekiston bo'ylab 24 soatda</p>
-</div>
-</div>
-<div class="flex items-center gap-5 group">
-<div class="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined text-4xl text-primary group-hover:text-white">verified_user</span>
-</div>
-<div>
-<h4 class="font-extrabold text-lg">Rasmiy kafolat</h4>
-<p class="text-sm text-slate-500 font-medium">Barcha mahsulotlarga kafolat</p>
-</div>
-</div>
-<div class="flex items-center gap-5 group">
-<div class="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined text-4xl text-primary group-hover:text-white">payments</span>
-</div>
-<div>
-<h4 class="font-extrabold text-lg">Oson to'lov</h4>
-<p class="text-sm text-slate-500 font-medium">Bo'lib to'lash imkoniyati</p>
-</div>
-</div>
-<div class="flex items-center gap-5 group">
-<div class="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined text-4xl text-primary group-hover:text-white">support_agent</span>
-</div>
-<div>
-<h4 class="font-extrabold text-lg">24/7 Qo'llab-quvvatlash</h4>
-<p class="text-sm text-slate-500 font-medium">Mutaxassislarimiz doim tayyor</p>
-</div>
-</div>
-</div>
-</section>
-<section class="py-20 bg-slate-50 dark:bg-slate-900/50">
-<div class="max-w-[1320px] mx-auto px-4">
-<h2 class="text-2xl font-black mb-12 text-center text-slate-400 uppercase tracking-[0.2em]">Ishonchli hamkorlarimiz</h2>
-<div class="flex flex-wrap justify-center items-center gap-16 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-<img alt="Samsung" class="h-8 lg:h-10 w-auto hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUU-Fb7gj8j97wO2ChYTt6m0xi9cNtX1aWW7vhxdaZK8FxZjH9BCVb5RAvn-54XY5Qq10d1JMXk5rM6LMx77Y5ulpR7FDUHzU8X7x9h3SfuW2LjMTsKviwNbHNoknU8n-hhfoqWVkEEWcQo8qSC0wtIt8LHUzMntvxwXEHaSZKqL29eJNnKd6p8a8KgFjSrG5mGA8jS3GaQp6FLRMs1NOh2ZLCX8eEkYRrJAwP7YR0MHcbubEzSsIXEUdgVzheZFL2yPb85XMMOysR"/>
-<img alt="LG" class="h-8 lg:h-10 w-auto hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjNNRencKvpY6hAlPEAG92qBdpi9Uk1rve3VlmjT1scLl6zxp_VHeekGrg1cyXIaJh-A497olWcsptf-oXj4v06aspIzoxb9Q8klR6vZ_pUtHdpfs1VZnyQKn2cGfL8tqgcW-fNHETJj7wNGteqxbA8MijdfHVmnl1fx9WmRuLN7miIE5B8WHJv5dC2m5DhN98-8xd2qvGuQDCOsTtejoYBZPi1pTE-8Ej1n0E3uxNPGbBGzaipMTbifMwlz0LTzBysL781jPRc7QO"/>
-<img alt="Bosch" class="h-8 lg:h-10 w-auto hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq7g2-tlEvYHsyVNgaecXQjA_klm4TYzy_PWBd6qh66Kn35j32F9VOEXCK6UIEXzd108w5SbX1qdkV-1U-HCaZWUOafyNILxHIKLwJvAYQVTNaf8SWR7HFA74ut2_rE84u7wmvTa18EGCr9oIhjbZ2hvzPA0cLfh-0Fgo0L-wIeGhwTwbKKd_jRanZWZ2Esy-sHStLdWFRuvyqoQK47WNxPQc16xPIf5hd-x2i_D0mtKnGV0BriQf-EsZqjvUFbrdklfZF-ujH5i8F"/>
-<img alt="Apple" class="h-8 lg:h-10 w-auto hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQuPi_xQ0xU71VtvGParhBxSWJeLhHxUD9dIKDdKrQC2o7FZrWc9EJCyIT8P1TzPGC9f6X_gFAhreXN6vT3sETLkovwe2x2eeu3rPsIcOX1LVY6_97hHLu4EN_BxKwlaBTtuTxVakuuMbNLCL_DWtn1MYEadN9cJP97LYRQUyd_EoehPWemhN_vgcb7G6AqIJb-m2J1om04PNP73bhTYsTIM8n1w0yyJIB3FDng9XDh_Xopp3VSEArJ9SOoRmRvOg5dYh3bkL5Qe9H"/>
-<img alt="Tesla" class="h-8 lg:h-10 w-auto hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqFHq9MHelmAUDRo9GrBkHeUFqA47S_rwJ5hjq_6FMw1yp8Nxb140rPSVFmz8J10eRXBcqnU4OtnAS2BEYmMeJgvnGuvrK2xx91bHBhUDapgz-jPV3e8fEoQqgCMi7zF1UBAMTLXEhyX92_lHi9RihcOCxZIW_6Hw4hRvmhZ5fK8e34ZUiWinSTK6rQSH6ClF7_kipfa8eUDEfbJCETU-DQWWgiR8d01TtZwCxIbnV_ERLKPvu2O3A6tZ3ZGveDOi9PricJ_mm3-na"/>
-<img alt="Panasonic" class="h-8 lg:h-10 w-auto hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBfArBh2fuqOrUik307u0HndZKyr3ntevQPwkTuQ99wQdmEqWNkAfv7oydP1-WBYJzGklTXf9ZGMwWI888aJkiUQgwGDdv_wYQf5okL1desmNaq1aBidY695nsW5QRg2Vr4xnnWSmxeNpb18pJoHO39V3jZZKABEXeK3tyhtkjY3id2TLxQfLxcOYPr7QzMHr-GUkc2n4Gv4_Vx5lrPUDjSiTPYUGIP671XAtGmOZFcdJm49MFYb7WqfxsrOLa761EPkaEWfRzCLf8"/>
-</div>
-</div>
-</section>
-</main>
-<footer class="bg-slate-900 text-slate-300 py-20">
-<div class="max-w-[1320px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
-<div class="space-y-8">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white">
-<span class="material-symbols-outlined">home_repair_service</span>
-</div>
-<span class="text-2xl font-extrabold text-white uppercase">Tech<span class="text-primary">House</span></span>
-</div>
-<p class="text-base leading-relaxed text-slate-400">
-                Zamonaviy texnologiyalar olamiga xush kelibsiz. Biz bilan uyingiz yanada shinam va hayotingiz yanada osonlashadi.
-            </p>
-<div class="flex gap-4">
-<a class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-primary transition-all hover:-translate-y-1" href="#">
-<img alt="Instagram" class="w-6 h-6 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgavEz4VJxovBHAoJXyNJsIA4iB53q7kQn2e7WuOESZAbU3seOvKEl8em_5LQnsDpFOgEqG_EYOFncCvS-h0fS65SOvFnVP73UZVzjkHfoIDTD7svMzAq2Pz1cnaVoss1qMxeb1XpoGHQIUGcOXQo3ucuRyHQlM1peFpO6ipAJ85hVR7kERplxkhyfDHnEqCuMDcWMUUrTspSnl1Zw9Tz08Ma8NBo0ervQ4WylQ5JoymjedObj1fnQMNhmKCMK4_9y4wlqH9MI9chk"/>
-</a>
-<a class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-primary transition-all hover:-translate-y-1" href="#">
-<img alt="Telegram" class="w-6 h-6 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2ZFrBPUntclIVlt8XFZ8pAL8PcJh6osLnnHV0SHXlj0810aSu-USvcD9V-mp2P2ImpZPabmoMcBnrfF37oQkojdMbm-5zODrRiAuf5GYJcYmTYBtUcPSSvVwGqJ9i-BS_6bRkYHVz3B7r8cM3cV3-8vYq7lW3YCrKIfBg-QU04FrNgykDznU9KiGw8FRoky0T-fOKgexE4nKvIIVUNqwzvWoqzwboq0yqnh-TrhQWVrV9OtWtgcg_cedZ8yy8FSnLO_Ra61VAs0El"/>
-</a>
-<a class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center hover:bg-primary transition-all hover:-translate-y-1" href="#">
-<img alt="Facebook" class="w-6 h-6 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXa6FEFddTWnNL368yp9hRWVrpN7agrv2d8cx4iQJF2qHNO_59npQlg6M7m7EstcMIFcfYtxvbkn6aRnYHXDO_s8uZEPtF7NpiKTMPG_m7z6kxrB71JIoabBnDxhvKf7aRimUYCDp1hG2nZHRJnDgM_l5pWYMyV69p6u_f2KBPzOSfnRheN-KXEi5uQInLBh8cmYNJzF2uqqjS7PXz7ZfSajabqKs8L_OiHWM9X6NkTxd_7nlVs7FbPhwKg5Y1kQ_tJR_QDKWf6BW9"/>
-</a>
-</div>
-</div>
-<div>
-<h4 class="text-white font-black text-lg mb-8">Kategoriyalar</h4>
-<ul class="space-y-5 text-[15px] font-medium">
-<li><a class="hover:text-primary transition-colors" href="#">Uy texnikasi</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Elektronika</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Kichik texnika</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Smartfonlar</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Aksiyalar</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-white font-black text-lg mb-8">Mijozlar uchun</h4>
-<ul class="space-y-5 text-[15px] font-medium">
-<li><a class="hover:text-primary transition-colors" href="#">Yetkazib berish</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">To'lov usullari</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Kafolat va qaytarish</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Bo'lib to'lash</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-white font-black text-lg mb-8">Biz bilan aloqa</h4>
-<ul class="space-y-6 text-[15px] font-medium">
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-primary">location_on</span>
-<span>Toshkent sh., Yunusobod tumani, 7-kvartal</span>
-</li>
-<li class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">call</span>
-<span>+998 71 200 00 00</span>
-</li>
-<li class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">mail</span>
-<span>info@techhouse.uz</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="max-w-[1320px] mx-auto px-4 mt-20 pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 font-medium">
-<p>© 2024 TechHouse. Barcha huquqlar himoyalangan.</p>
-<div class="flex gap-8">
-<a class="hover:text-white transition-colors" href="#">Maxfiylik siyosati</a>
-<a class="hover:text-white transition-colors" href="#">Ommaviy oferta</a>
-</div>
-</div>
-</footer>
-<button class="fixed bottom-8 right-8 w-14 h-14 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl flex items-center justify-center border border-slate-100 dark:border-slate-700 z-50 transition-transform active:scale-95" onclick="document.documentElement.classList.toggle('dark')">
-<span class="material-symbols-outlined dark:hidden">dark_mode</span>
-<span class="material-symbols-outlined hidden dark:block">light_mode</span>
-</button>
 
-</body></html>
+<body class="dark:bg-background-dark dark:text-white">
+    <header
+        class="sticky top-0 z-50 h-16 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-white/5">
+        <div class="max-w-[1320px] mx-auto h-full px-4 flex items-center justify-between gap-8">
+            <div class="flex items-center gap-2 shrink-0">
+                <div class="size-8 bg-primary rounded flex items-center justify-center text-white shadow-md">
+                    <span class="material-symbols-outlined text-xl">bolt</span>
+                </div>
+                <h1 class="text-lg font-bold tracking-tight uppercase">TechHouse</h1>
+            </div>
+            <nav class="hidden xl:flex items-center gap-6 whitespace-nowrap">
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors"
+                    href="#">Kategoriyalar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Aksiyalar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Brendlar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors"
+                    href="#">Yangiliklar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Kontaktlar</a>
+            </nav>
+            <div class="flex-1 max-w-md relative hidden md:block">
+                <input
+                    class="w-full h-9 pl-10 pr-4 bg-gray-100 dark:bg-white/5 border-none rounded-full focus:ring-2 focus:ring-primary/30 text-xs transition-all"
+                    placeholder="Mahsulotlarni izlash..." type="text" />
+                <span
+                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button
+                    class="size-9 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors relative group">
+                    <span class="material-symbols-outlined text-xl text-primary filled">favorite</span>
+                    <span
+                        class="absolute -top-0.5 -right-0.5 size-4 bg-primary border-2 border-white dark:border-background-dark text-white text-[9px] font-bold rounded-full flex items-center justify-center">5</span>
+                </button>
+                <button
+                    class="size-9 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors">
+                    <span class="material-symbols-outlined text-xl">person</span>
+                </button>
+                <button
+                    class="size-9 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-full transition-all relative">
+                    <span class="material-symbols-outlined text-xl">shopping_cart</span>
+                    <span
+                        class="absolute -top-0.5 -right-0.5 size-4 bg-primary border-2 border-white dark:border-background-dark text-white text-[9px] font-bold rounded-full flex items-center justify-center">3</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="relative bg-[#f4f4f4] dark:bg-[#1a1a1a] overflow-hidden">
+            <div
+                class="max-w-[1320px] mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 items-center min-h-[460px] py-8 lg:py-0 relative">
+                <div class="space-y-6 z-10 relative">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-widest">
+                        Yangi kolleksiya 2024
+                    </div>
+                    <h2
+                        class="text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#1d130c] dark:text-white">
+                        Premium oshxona <br /><span class="text-primary">texnikasi</span> bilan qulaylik
+                    </h2>
+                    <p class="text-base text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed">
+                        Sizning uyingiz uchun eng so'nggi rusumdagi sovutgich va pechlar. Sifat va kafolat bilan
+                        hayotingizni yengillashtiring.
+                    </p>
+                    <div class="flex items-center gap-4 pt-2">
+                        <button
+                            class="px-8 h-12 bg-primary text-white font-bold rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all flex items-center gap-2">
+                            Batafsil <span class="material-symbols-outlined text-xl">east</span>
+                        </button>
+                        <button
+                            class="px-8 h-12 border border-gray-300 dark:border-white/10 font-bold rounded-full hover:bg-white dark:hover:bg-white/5 transition-all">
+                            Katalog
+                        </button>
+                    </div>
+                </div>
+                <div class="relative lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-1/2">
+                    <img alt="High-end Kitchen" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwlZOKjZxcXaDDEndP2vzVglVjVZMgoNb2D8e7Aog3Zb2Fm1oDGB9LgIITbjnBSgXZH1PD564FahBzaBrqn7Bju56wpn0O4_RijXfkP8hIqfaBV518Fqdn2qmkVee_nJBbojqpk9-LU6tGn8SkynchTvHYKzQKPosxsTlmj-GE6HCptWfUUxRExspxRiAvrJjRAiLKmQ-1o-t2fiRmNF6CMBeSknyawyCnhuXHzKbkxEw4kAjVQZ1Uis9YK0MEvistQ_116Dw4CO_Y" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-[#f4f4f4] via-transparent to-transparent dark:from-[#1a1a1a] hidden lg:block">
+                    </div>
+                </div>
+                <button
+                    class="absolute left-4 top-1/2 -translate-y-1/2 size-12 rounded-full bg-white/90 dark:bg-black/40 backdrop-blur shadow-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all z-20 group">
+                    <span
+                        class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">chevron_left</span>
+                </button>
+                <button
+                    class="absolute right-4 top-1/2 -translate-y-1/2 size-12 rounded-full bg-white/90 dark:bg-black/40 backdrop-blur shadow-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all z-20 group">
+                    <span
+                        class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">chevron_right</span>
+                </button>
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+                    <button class="w-10 h-1.5 rounded-full bg-primary transition-all"></button>
+                    <button
+                        class="w-2.5 h-1.5 rounded-full bg-gray-300 dark:bg-white/20 hover:bg-primary/50 transition-all"></button>
+                    <button
+                        class="w-2.5 h-1.5 rounded-full bg-gray-300 dark:bg-white/20 hover:bg-primary/50 transition-all"></button>
+                    <button
+                        class="w-2.5 h-1.5 rounded-full bg-gray-300 dark:bg-white/20 hover:bg-primary/50 transition-all"></button>
+                </div>
+            </div>
+        </section>
+        <section class="py-8 max-w-[1320px] mx-auto px-4">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl font-bold tracking-tight">Kategoriyalar</h3>
+                <a class="text-sm font-bold text-primary hover:underline" href="#">Barchasi</a>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                    <div
+                        class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
+                        <span
+                            class="material-symbols-outlined text-2xl text-gray-700 dark:text-gray-300 group-hover:text-primary">kitchen</span>
+                    </div>
+                    <span
+                        class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Muzlatgichlar</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                    <div
+                        class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
+                        <span
+                            class="material-symbols-outlined text-2xl text-gray-700 dark:text-gray-300 group-hover:text-primary">skillet</span>
+                    </div>
+                    <span
+                        class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Oshxona</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                    <div
+                        class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
+                        <span
+                            class="material-symbols-outlined text-2xl text-gray-700 dark:text-gray-300 group-hover:text-primary">local_laundry_service</span>
+                    </div>
+                    <span class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Kir
+                        yuvish</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                    <div
+                        class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
+                        <span
+                            class="material-symbols-outlined text-2xl text-gray-700 dark:text-gray-300 group-hover:text-primary">ac_unit</span>
+                    </div>
+                    <span
+                        class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Sovutish</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                    <div
+                        class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
+                        <span
+                            class="material-symbols-outlined text-2xl text-gray-700 dark:text-gray-300 group-hover:text-primary">heat_pump</span>
+                    </div>
+                    <span
+                        class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Isitish</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                    <div
+                        class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
+                        <span
+                            class="material-symbols-outlined text-2xl text-gray-700 dark:text-gray-300 group-hover:text-primary">vacuum</span>
+                    </div>
+                    <span
+                        class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Tozalash</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                    <div
+                        class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
+                        <span
+                            class="material-symbols-outlined text-2xl text-gray-700 dark:text-gray-300 group-hover:text-primary">devices_other</span>
+                    </div>
+                    <span
+                        class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Aksessuarlar</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                    <div
+                        class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
+                        <span
+                            class="material-symbols-outlined text-2xl text-gray-700 dark:text-gray-300 group-hover:text-primary">smartphone</span>
+                    </div>
+                    <span
+                        class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Smartfonlar</span>
+                </div>
+            </div>
+        </section>
+        <section class="py-10 bg-white dark:bg-white/5 relative overflow-hidden">
+            <div class="max-w-[1320px] mx-auto px-4">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h3 class="text-xl font-bold tracking-tight">Maxsus Aksiyalar</h3>
+                        <p class="text-xs text-gray-500 mt-1">Haftaning eng qaynoq narxlari</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button
+                            class="size-11 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center bg-white dark:bg-background-dark hover:bg-primary hover:text-white transition-all shadow-sm">
+                            <span class="material-symbols-outlined font-bold">chevron_left</span>
+                        </button>
+                        <button
+                            class="size-11 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center bg-white dark:bg-background-dark hover:bg-primary hover:text-white transition-all shadow-sm">
+                            <span class="material-symbols-outlined font-bold">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex gap-5 overflow-visible">
+                    <div
+                        class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:shadow-xl transition-all">
+                        <div
+                            class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
+                            -15%</div>
+                        <button
+                            class="absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10 group/heart">
+                            <span
+                                class="material-symbols-outlined text-xl group-active:filled group-active:text-primary">favorite</span>
+                        </button>
+                        <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+                            <img alt="Dual Cook Oven"
+                                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUyeJHhNN7rvPXpBllgNnmjTR9XGUd3QlStYlpFmmPGtIe-BwwaufjpSjMBSdtE4WAcP3IimE1_vvxIk3ourZ7YTArV8RI_to7K9gXL-kwNqI8rdTwG8tt915M2OEmhqAelkn5FUO5hJWdf1Jll8qpUI8xnAU0qu128Q_P05ugyQ2qrRcdrXfbNhijNAkY_JtmqyluYpxbR36FGl_0hKPpJUpzrW7OG99NNQ0d_rdUSfpJniYRCOOq5uWJF8YpO32TaeKnBnMFvU6x" />
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Premium Dual Cook Flex Pechi
+                            </h4>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-sm font-bold text-primary">8 250 000 so‘m</span>
+                                <span class="text-[9px] text-gray-400 line-through">9 500 000</span>
+                            </div>
+                            <button
+                                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all">Savatga
+                                qo‘shish</button>
+                        </div>
+                    </div>
+                    <div
+                        class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-primary/30 dark:border-primary/50 rounded-xl p-4 relative group hover:shadow-xl transition-all shadow-md">
+                        <div
+                            class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
+                            -20%</div>
+                        <button
+                            class="absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-primary transition-colors z-10">
+                            <span class="material-symbols-outlined text-xl filled">favorite</span>
+                        </button>
+                        <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+                            <img alt="Washing Machine"
+                                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjiCDwmefDFSx1KHZ_OKnCtL4D5XEJCFbKZwLiNH5QtnhXPpCKcovBGZqsXQIDw0eYLYI0-FX17LLGVovzBctpUD23awtrPpWIhNJTdzcslkrHgkhsktQoYJ0b9ShSJj6wxkRSh_hiIf11r4UOA39t9H8XbWYNASXYsz4XQJSPOvIGm0cnUynRFgcTelXkAKDo6TCSNxsc7M4oNnLIXAhEKwSvizRpuhAgtecqymXmfFDSI0HCBzueZmaMaV6yVD14ZcPE5BSZ10Al" />
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Vivace AI DD Kir yuvish
+                                mashinasi</h4>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-sm font-bold text-primary">5 120 000 so‘m</span>
+                                <span class="text-[9px] text-gray-400 line-through">6 400 000</span>
+                            </div>
+                            <button
+                                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all">Savatga
+                                qo‘shish</button>
+                        </div>
+                    </div>
+                    <div
+                        class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:shadow-xl transition-all">
+                        <div
+                            class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
+                            -10%</div>
+                        <button
+                            class="absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10 group/heart">
+                            <span
+                                class="material-symbols-outlined text-xl group-active:filled group-active:text-primary">favorite</span>
+                        </button>
+                        <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+                            <img alt="Fridge"
+                                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM45zXkPAyE0yWHaNfBImcb4DsHeF6TRg3FyIUsDsXYazjsg-wDanKDezt25nkdjpb10LXC-q_AvmQvgDuxeWN1XFqErq_iME6axk4Rj4dl3Nz392ZYCqWFBCb3QpYt5fJSkuYF7fyI2JOexBlDQT7OpW41A0LUO5skW6AJohbmMRi6U3Gk-HLpr6bKITAke5rtjEYhgOfd_LzmhsV2Qs7dMlozMoxlLQJ-DMUVI--46EIfe1f8OzRViynyXZ4T3Gxrl09XwExMXd4" />
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Smart Serie 6 Muzlatgichi</h4>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-sm font-bold text-primary">12 000 000 so‘m</span>
+                                <span class="text-[9px] text-gray-400 line-through">13 330 000</span>
+                            </div>
+                            <button
+                                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all">Savatga
+                                qo‘shish</button>
+                        </div>
+                    </div>
+                    <div
+                        class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group opacity-40 hover:opacity-100 transition-all cursor-pointer">
+                        <div
+                            class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
+                            -25%</div>
+                        <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+                            <img alt="Microwave" class="w-full h-full object-contain mix-blend-multiply"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2075p1YR0abIwccxiLFpX-DKTMyat5hndXozp2dc6ywQ-PGCwFVLCS2lMi2a6nqtKJT6LPKItNz6F_UKPAKbwCpVOxLUOwwwHRGNE9u1Neo10a0YHZsURfGZa6USNe82aSoOJUgOIoYBd_N_mD3no_s47MwKWgM8A7eTIyXBBTWyHNiGfj6grFOJs_jjsDtC5w9GB3SwtcEjwLJ4tedyVjxDasZwviH0zCUfm5wYnWYWZuNBxlD4MZVtvtbmRywd-Sg90JQo8g7fv" />
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Kompakt Mikroto‘lqinli pech 20L
+                            </h4>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-sm font-bold text-primary">1 100 000 so‘m</span>
+                            </div>
+                            <button
+                                class="w-full h-9 bg-gray-100 dark:bg-white/5 text-[11px] font-bold rounded-lg">Savatga
+                                qo‘shish</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-10 max-w-[1320px] mx-auto px-4">
+            <h3 class="text-xl font-bold mb-6 text-center tracking-tight">Ommabop mahsulotlar</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div
+                    class="bg-white dark:bg-white/5 p-4 rounded-xl border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-lg transition-all group relative">
+                    <button
+                        class="absolute top-6 right-6 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-primary transition-colors z-10">
+                        <span class="material-symbols-outlined text-xl filled">favorite</span>
+                    </button>
+                    <div class="aspect-square rounded-lg bg-gray-50 dark:bg-white/10 overflow-hidden mb-4">
+                        <img alt="Microwave"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB30XnapiodFnyn7uQmpLXhWLgUaAdjjtAf9I4r8cypdhYw0QW-MHDubgrTbtnLdRK-urV0fdsnfwcGDONVkKtUtahGQ6kIFy69uH9DI8iJnDaEfOvgJG3c7a0mptNl5tuNWtlWb86ZVraV6w85EZQwGusn95-L40yGzjhMIv14JkIV-orpDqmccn6F30JInqhZdBUNjQa4C9BhUh7b-_H_uEB1ZDYLt_cCO4o6twKRmVom1BPLp6O89FvSNloxX3F3NG0DAgxvmRnz" />
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-[14px] group-hover:text-primary transition-colors line-clamp-1">Aqlli
+                            mikroto'lqinli pech</h4>
+                        <p class="text-base font-bold text-black dark:text-white">2 450 000 so‘m</p>
+                        <button
+                            class="w-full h-10 bg-gray-100 dark:bg-white/10 rounded-lg font-bold text-xs hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-lg">shopping_basket</span>
+                            Savatga qo‘shish
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-white/5 p-4 rounded-xl border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-lg transition-all group relative">
+                    <button
+                        class="absolute top-6 right-6 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10 group/heart">
+                        <span
+                            class="material-symbols-outlined text-xl group-active:filled group-active:text-primary">favorite</span>
+                    </button>
+                    <div class="aspect-square rounded-lg bg-gray-50 dark:bg-white/10 overflow-hidden mb-4">
+                        <img alt="Vacuum Cleaner"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPnv9dSF-MazCqeFP-FYhsrSfmKZG7UMeNqalugCc5yVAgQWfO7Yc_WAxFTIiBaXM-r7uBMZNN34TTFk3xOxhtd2ZBs829KQNm_eJRalFZcJlpTcLDgWp8XMvFgeuLQBWnKGa1XbxTx2i0x4xO4xinnvOxDJecpxpSVMMPjwHPIdUzZIDHo9lm8whluK-vfNWDsxL2grt8nJQygbWMovphQ-JMrBg-y_PwSll5r1Wm9LpAkmqn5b_bD8OE1_CiT-9JlCjKlRtH_j0b" />
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-[14px] group-hover:text-primary transition-colors line-clamp-1">Simsiz
+                            changyutgich Pro</h4>
+                        <p class="text-base font-bold text-black dark:text-white">4 800 000 so‘m</p>
+                        <button
+                            class="w-full h-10 bg-gray-100 dark:bg-white/10 rounded-lg font-bold text-xs hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-lg">shopping_basket</span>
+                            Savatga qo‘shish
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-white/5 p-4 rounded-xl border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-lg transition-all group relative">
+                    <button
+                        class="absolute top-6 right-6 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-primary transition-colors z-10">
+                        <span class="material-symbols-outlined text-xl filled">favorite</span>
+                    </button>
+                    <div class="aspect-square rounded-lg bg-gray-50 dark:bg-white/10 overflow-hidden mb-4">
+                        <img alt="Coffee Machine"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV1-kWJSg4O1RhbR4RXypo0g87Lb64MhpLXO8_d7NLmqk9vHv1oYaC2CxGwwpciaFjGB-rhVz-884eT8gU3sxFQwIlM-iHMTLAjtsJ-jmaLzJ5cAqAi1MmM13m8pVTkm8YHNxKKGv1L6vJT9WjsR0xtdF8uh0dHKicWwZVeSUnaENQlIzVt2sxWloIBDq8icE6v-THLjUEQXQMwFps7rc6NZ5CpOr0h93nmHXKdjhOi-ykQap7E0M7zV9_6KI7kpwPGHHqO3QyUUtY" />
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-[14px] group-hover:text-primary transition-colors line-clamp-1">
+                            Avtomatik kofe mashinasi</h4>
+                        <p class="text-base font-bold text-black dark:text-white">7 300 000 so‘m</p>
+                        <button
+                            class="w-full h-10 bg-gray-100 dark:bg-white/10 rounded-lg font-bold text-xs hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-lg">shopping_basket</span>
+                            Savatga qo‘shish
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-white/5 p-4 rounded-xl border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-lg transition-all group relative">
+                    <button
+                        class="absolute top-6 right-6 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10 group/heart">
+                        <span
+                            class="material-symbols-outlined text-xl group-active:filled group-active:text-primary">favorite</span>
+                    </button>
+                    <div class="aspect-square rounded-lg bg-gray-50 dark:bg-white/10 overflow-hidden mb-4">
+                        <img alt="Iron"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBJ0ScRtqhT4ATSZgxHZmKwn0XkNmpswevcVpNQ6MUl8_6zz-nJ6fowISETNaRxYaas9O2c9wRONYt0ew_BMntCwKV5yQLR4Ho8NSFd1ud46G11zRRKWY-VUr8bhEuEh6kCqMHoG4KHPo_zn2pOyT0r3Qwbxt4KrsDA4kq5UfizsHDzpMBNXZgPGzW_AAKKu6OJ3zZ9sblZt0gzCo9DdJ-5tr_rui9cDb0U4Dbh1SwwnNpLM3V134XS8FDvUy7W8T70Hjn3FHBBqis" />
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-[14px] group-hover:text-primary transition-colors line-clamp-1">Bug'li
+                            dazmol Pro 3000</h4>
+                        <p class="text-base font-bold text-black dark:text-white">1 200 000 so‘m</p>
+                        <button
+                            class="w-full h-10 bg-gray-100 dark:bg-white/10 rounded-lg font-bold text-xs hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-lg">shopping_basket</span>
+                            Savatga qo‘shish
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-10 bg-accent-blue dark:bg-white/5">
+            <div class="max-w-[1320px] mx-auto px-4">
+                <h3 class="text-xl font-bold mb-8 text-center tracking-tight">Nega TechHouse?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="flex flex-col items-center text-center gap-3">
+                        <div
+                            class="size-12 bg-white dark:bg-background-dark rounded-xl flex items-center justify-center text-primary shadow-sm border border-gray-50 dark:border-white/5">
+                            <span class="material-symbols-outlined text-2xl">local_shipping</span>
+                        </div>
+                        <h5 class="font-bold text-sm">Tezkor Yetkazib Berish</h5>
+                        <p class="text-[11px] text-gray-500 leading-relaxed px-4">Toshkent bo‘ylab 24 soat ichida
+                            mutlaqo bepul.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-3">
+                        <div
+                            class="size-12 bg-white dark:bg-background-dark rounded-xl flex items-center justify-center text-primary shadow-sm border border-gray-50 dark:border-white/5">
+                            <span class="material-symbols-outlined text-2xl">verified_user</span>
+                        </div>
+                        <h5 class="font-bold text-sm">Rasmiy Kafolat</h5>
+                        <p class="text-[11px] text-gray-500 leading-relaxed px-4">Har bir mahsulot uchun 3 yilgacha
+                            rasmiy kafolat.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-3">
+                        <div
+                            class="size-12 bg-white dark:bg-background-dark rounded-xl flex items-center justify-center text-primary shadow-sm border border-gray-50 dark:border-white/5">
+                            <span class="material-symbols-outlined text-2xl">payments</span>
+                        </div>
+                        <h5 class="font-bold text-sm">Muddatli To‘lov</h5>
+                        <p class="text-[11px] text-gray-500 leading-relaxed px-4">Banklarsiz va foizlarsiz to‘lov
+                            rejasi.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center gap-3">
+                        <div
+                            class="size-12 bg-white dark:bg-background-dark rounded-xl flex items-center justify-center text-primary shadow-sm border border-gray-50 dark:border-white/5">
+                            <span class="material-symbols-outlined text-2xl">support_agent</span>
+                        </div>
+                        <h5 class="font-bold text-sm">24/7 Yordam</h5>
+                        <p class="text-[11px] text-gray-500 leading-relaxed px-4">Mutaxassislarimiz har doim yordamga
+                            tayyor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-[#fcfcfc] dark:bg-[#121212]">
+            <div class="max-w-[1320px] mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h3 class="text-2xl font-bold tracking-tight mb-2">TechHouse Club</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Sodiq mijozlarimiz uchun maxsus imtiyozlar
+                        dunyosi</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-white dark:bg-white/5 rounded-2xl p-8 border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col">
+                        <div class="flex items-center justify-between mb-6">
+                            <div
+                                class="size-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-3xl">military_tech</span>
+                            </div>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-white/10 rounded-full text-[10px] font-bold tracking-wider">1x
+                                BALLAR</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-6">Bronza</h4>
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="flex items-center gap-3 text-sm">
+                                <span
+                                    class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+                                <span>Sodiqlik ballari</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-sm">
+                                <span
+                                    class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+                                <span>Maxsus chegirmalar</span>
+                            </li>
+                        </ul>
+                        <button
+                            class="w-full h-12 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all">A'zo
+                            bo'lish</button>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-white/5 rounded-2xl p-8 border-2 border-primary shadow-xl hover:shadow-2xl transition-all relative overflow-hidden flex flex-col scale-105 z-10">
+                        <div
+                            class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-4 py-1 rounded-bl-xl uppercase tracking-widest">
+                            Ommabop
+                        </div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div
+                                class="size-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-3xl">workspace_premium</span>
+                            </div>
+                            <span
+                                class="px-3 py-1 bg-primary text-white rounded-full text-[10px] font-bold tracking-wider">2x
+                                BALLAR</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-6">Kumush</h4>
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="flex items-center gap-3 text-sm">
+                                <span
+                                    class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+                                <span class="font-semibold">2x ko'p ballar</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-sm">
+                                <span
+                                    class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+                                <span>Ustuvor xizmat</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-sm">
+                                <span
+                                    class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+                                <span>Bronza barcha afzalliklari</span>
+                            </li>
+                        </ul>
+                        <button
+                            class="w-full h-12 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">A'zo
+                            bo'lish</button>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-white/5 rounded-2xl p-8 border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col">
+                        <div class="flex items-center justify-between mb-6">
+                            <div
+                                class="size-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-3xl">stars</span>
+                            </div>
+                            <span
+                                class="px-3 py-1 bg-gray-100 dark:bg-white/10 rounded-full text-[10px] font-bold tracking-wider">5x
+                                BALLAR</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-6">Oltin</h4>
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="flex items-center gap-3 text-sm">
+                                <span
+                                    class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+                                <span>Maksimal keshbek</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-sm">
+                                <span
+                                    class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+                                <span>Bepul yetkazish</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-sm">
+                                <span
+                                    class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+                                <span>Eksklyuziv takliflar</span>
+                            </li>
+                        </ul>
+                        <button
+                            class="w-full h-12 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all">A'zo
+                            bo'lish</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 max-w-[1320px] mx-auto px-4">
+            <h3 class="text-2xl font-bold mb-10 text-center tracking-tight">Bizning brendlar</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="group cursor-pointer">
+                    <div
+                        class="h-32 bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center p-8">
+                        <img alt="Artel"
+                            class="h-12 w-full object-contain transition-all duration-300 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8l1hyrj_y7jxPiRkl2GW8_Ig7K2eeUYTyRVr5Bqb7OXpyfp2IQl9A8hvmeWSAiy_N2ro_lFfmIFIki3Cr17rHTCsNgK_2dy91oQxriJC6cLdAlCsNfvm2-3RvbBOKKv2zzY43jFZ2bRHW-PihI33YZLYIIT_9qAowoN4TZMeXflE5XcZEykbkSM-7Or7aLc387c3OuhsKYBk4oEJD_bGWCbqxarcxH1EwcXdOaYTgIyPSvaGVKFsu5yudiAGzFWxkbWu9-EGkBsAB" />
+                    </div>
+                </div>
+                <div class="group cursor-pointer">
+                    <div
+                        class="h-32 bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center p-8">
+                        <img alt="Bosch"
+                            class="h-10 w-full object-contain transition-all duration-300 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAG7QiRxLxIhJKj4cOyYV_JPV7IwADurEJC7Y4cmVbC8QAY2Xdt2Cknrjph4zILkKyTQGsZGsNXRcLlNKUY81Vr7DkdDz4NGkMBy9onxxq9pIXULz5gVDx1XU0X2Yn_u3mYZcTm2zsFiGDxh8Rj_bNpuTkqHSrGc_sD3bCdHcmnuxOrPT1HB7v7c54lvbd_mjmX0bfxJky0Eh-erviJn8XWJ1UEMmPaRLX5i3S2Z5Ul1neueNvbpwMGwElCwL23fJZX9VQgHfGbdLB" />
+                    </div>
+                </div>
+                <div class="group cursor-pointer">
+                    <div
+                        class="h-32 bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center p-8">
+                        <img alt="Asus"
+                            class="h-8 w-full object-contain transition-all duration-300 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqKwD6gbvLShqs17C_J0GRKdXsynuVoA7DjBXNIFpGx1vF3TiDhrod2dhQUXm_n3ktNi-t4G2EYJ9cOdbNRS7cEcwFo_rFOJUqfhhpjs-iciHodIcWwR0L2MOQaHwoBmVfT66_mgpvjw7P87K0RQYHXg3qvwvlcrVX-fM0JkqE7mr4J9NE_gU2TKCiX5Tyfun2cZtDkMFgApaIU-AV8Cq0uLWacrkmHz3JlF8LD_x3GgB52VXRuARQeuIt7JyvIfZYZGF0Tex9tYKF" />
+                    </div>
+                </div>
+                <div class="group cursor-pointer">
+                    <div
+                        class="h-32 bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center p-8">
+                        <img alt="Samsung"
+                            class="h-10 w-full object-contain transition-all duration-300 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLOsiUEAgP1GEXRM7qc48ErBctAhppQNB1U4dXxVE2R103jqE9mV5SYDTSmfjXgA34URi1F-fcKRSTokUn4zfbWcCUDM_MWGFhBGrdNI1vAiz7-_Eyr6uDR8tAB5jSIadLiPewhe0xiCPDzpafALh7Fe6h8P7Ue1JYE61HrIa3w4FlA68AiIza_YbM-U6UDk0bnwq9e-VfHlyHnHK1OxRxd-D4rz6iEYHxD44yPr83HuDzBhDz95MObSVaIsvGzNLp2D2uUTblZVtF" />
+                    </div>
+                </div>
+                <div class="group cursor-pointer">
+                    <div
+                        class="h-32 bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center p-8">
+                        <img alt="Redmi"
+                            class="h-12 w-full object-contain transition-all duration-300 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtKVx2YmAO3CFoyRyC7cRZMHg2U7rCXB0rzlh2C11-hs_3FiEp_uOjbdTy8A-9o9lizo5qLxxN9KsSz8BeF6XuBlFYQNYyakR9_7PlTxn-IEIgG7JfXW_RDay6dOEOP-VrYcotZ2yAtKVQM4ZNO8BxeS3Mdkp2SQUC0cbaYA93CnrEkRGA5TJjX8OQ2Y6fdx1nSUdsnyrQaUU_TYUZIcHmGrJ50l5FacuVV3Boiyqu_0Y-2tM6CBTBNjCNOoihfrwq7gnsVr62cirQ" />
+                    </div>
+                </div>
+                <div class="group cursor-pointer">
+                    <div
+                        class="h-32 bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center p-8">
+                        <img alt="LG"
+                            class="h-12 w-full object-contain transition-all duration-300 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrjZCP2DpYNgeDZjTh8E02SYe4iLuhcBHBoyal9xfLzbFX0GbHP39J-BieNfcTtJNqQwSCv_msHL_BllJqeBttweZwQS76J6aVhZYjE8qMjfAUsG95Iqh_dTz2Qv3QbrkeCXp8OxzgK1dCUVGvc2frlYjVK61egSeTdx_o15Lg3-6x3UZJpBTG0WpYkndSXjE-ZDP5zTQrlE9Gi0Lo2u5DJNGsyN3D6wDNKgB0Awp5iXByl4fg_ypOdsh6v4sBobFUjiZss8Usvpbr" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-background-dark text-gray-400 py-10 border-t border-white/5">
+        <div class="max-w-[1320px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div class="space-y-4">
+                <div class="flex items-center gap-2">
+                    <div class="size-7 bg-primary rounded flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-lg">bolt</span>
+                    </div>
+                    <h1 class="text-lg font-bold tracking-tight text-white uppercase">TechHouse</h1>
+                </div>
+                <p class="text-xs leading-relaxed max-w-xs">
+                    O‘zbekistondagi eng zamonaviy maishiy texnika va elektronika do‘konlar tarmog‘i.
+                </p>
+                <div class="flex gap-2">
+                    <a class="size-8 bg-white/5 rounded flex items-center justify-center hover:bg-primary transition-colors"
+                        href="#"><span class="material-symbols-outlined text-base">share</span></a>
+                    <a class="size-8 bg-white/5 rounded flex items-center justify-center hover:bg-primary transition-colors"
+                        href="#"><span class="material-symbols-outlined text-base">public</span></a>
+                    <a class="size-8 bg-white/5 rounded flex items-center justify-center hover:bg-primary transition-colors"
+                        href="#"><span class="material-symbols-outlined text-base">alternate_email</span></a>
+                </div>
+            </div>
+            <div>
+                <h6 class="font-bold text-xs text-white uppercase tracking-wider mb-4">Xaridorlarga</h6>
+                <ul class="space-y-2 text-xs">
+                    <li><a class="hover:text-primary transition-colors" href="#">Yetkazib berish</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">To‘lov turlari</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Muddatli to‘lov</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Kafolat</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-bold text-xs text-white uppercase tracking-wider mb-4">Kompaniya</h6>
+                <ul class="space-y-2 text-xs">
+                    <li><a class="hover:text-primary transition-colors" href="#">Biz haqimizda</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Do‘konlar</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Vakansiyalar</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Kontaktlar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-bold text-xs text-white uppercase tracking-wider mb-4">Kontakt</h6>
+                <ul class="space-y-3 text-xs">
+                    <li class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-lg">call</span>
+                        <span class="text-white font-semibold">+998 (71) 200-00-00</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-lg">mail</span>
+                        <span>info@techhouse.uz</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-[1320px] mx-auto px-4 border-t border-white/5 pt-6 text-center text-[10px] text-gray-500">
+            <p>© 2024 TechHouse. O'zbekiston bo'ylab xizmat ko'rsatiladi.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
