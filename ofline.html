@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="light" lang="uz">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TechHouse Store Pickup Map Page</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6600",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#23170f",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#1d130c] dark:text-white antialiased">
+    <!-- Header Section -->
+    <header
+        class="sticky top-0 z-50 h-16 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-white/5">
+        <div class="max-w-[1320px] mx-auto h-full px-4 flex items-center justify-between gap-8">
+            <div class="flex items-center gap-2 shrink-0">
+                <div class="size-8 bg-primary rounded flex items-center justify-center text-white shadow-md">
+                    <span class="material-symbols-outlined text-xl">bolt</span>
+                </div>
+                <h1 class="text-lg font-bold tracking-tight uppercase">TechHouse</h1>
+            </div>
+            <nav class="hidden xl:flex items-center gap-6 whitespace-nowrap">
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors"
+                    href="#">Kategoriyalar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Aksiyalar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Brendlar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors"
+                    href="#">Yangiliklar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Kontaktlar</a>
+            </nav>
+            <div class="flex-1 max-w-md relative hidden md:block">
+                <input
+                    class="w-full h-9 pl-10 pr-4 bg-gray-100 dark:bg-white/5 border-none rounded-full focus:ring-2 focus:ring-primary/30 text-xs transition-all"
+                    placeholder="Mahsulotlarni izlash..." type="text" />
+                <span
+                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button
+                    class="size-9 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors relative group">
+                    <span class="material-symbols-outlined text-xl text-primary filled">favorite</span>
+                    <span
+                        class="absolute -top-0.5 -right-0.5 size-4 bg-primary border-2 border-white dark:border-background-dark text-white text-[9px] font-bold rounded-full flex items-center justify-center">5</span>
+                </button>
+                <a href="login.html"
+                    class="size-9 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors">
+                    <span class="material-symbols-outlined text-xl">person</span>
+                </a>
+                <button
+                    class="size-9 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-full transition-all relative">
+                    <span class="material-symbols-outlined text-xl">shopping_cart</span>
+                    <span
+                        class="absolute -top-0.5 -right-0.5 size-4 bg-primary border-2 border-white dark:border-background-dark text-white text-[9px] font-bold rounded-full flex items-center justify-center">3</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="flex h-[calc(100vh-140px)] overflow-hidden">
+        <!-- Sidebar: Store List (40%) -->
+        <aside
+            class="w-[40%] flex flex-col bg-white dark:bg-background-dark border-r border-[#f4ece6] dark:border-[#3d2c20]">
+            <!-- Search Bar -->
+            <div class="p-6 border-b border-[#f4ece6] dark:border-[#3d2c20]">
+                <h1 class="text-lg font-bold mb-4">Olib ketish punktini tanlang</h1>
+                <div class="relative">
+                    <label class="flex flex-col min-w-40 h-12 w-full">
+                        <div
+                            class="flex w-full flex-1 items-stretch rounded-lg h-full border border-[#f4ece6] dark:border-[#3d2c20]">
+                            <div class="text-[#a16a45] flex bg-[#f4ece6] dark:bg-[#3d2c20] items-center justify-center pl-4 rounded-l-lg"
+                                data-icon="MagnifyingGlass">
+                                <span class="material-symbols-outlined">search</span>
+                            </div>
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-[#1d130c] dark:text-white focus:outline-0 focus:ring-1 focus:ring-primary border-none bg-[#f4ece6] dark:bg-[#3d2c20] h-full placeholder:text-[#a16a45] px-4 pl-2 text-base font-normal leading-normal"
+                                placeholder="Shaharni yoki do'konni qidiring" value="" />
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <!-- Scrollable List -->
+            <div class="flex-1 overflow-y-auto p-4 space-y-4 hide-scrollbar">
+                <!-- Selected Card -->
+                <div class="p-1 rounded-xl border-2 border-primary bg-primary/5 shadow-sm">
+                    <div class="flex flex-col @container">
+                        <div class="flex flex-col items-stretch justify-start rounded-lg bg-transparent">
+                            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                data-alt="TechHouse Tashkent City Store Interior"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBp4-WQLQ9fpLrYvB7oBvByK7nBph8TphAqHOhMmuAStGuoOCSbFQy0XUVGMi-WXfxTDAZdE0UszQNwPUluHkMsp5ZR5Ngi14iYAd-87bBCmpfKw0y4mn3xUtqRUbE_QyFg1nMR8WKp-Xs4N2oKkDwo-9_aCN-OUf7G-_Q4A1zfSYqqKcmTvH0sw2sepS8haxlXkQKNT8k527Fukq6416-HEH3ymBR6oh-eQuwguI1Mn4CBSFbaAJSnHhbmo3yI9C2H6jyXxYJgC5nX");'>
+                            </div>
+                            <div
+                                class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 px-3">
+                                <div class="flex justify-between items-start">
+                                    <p class="text-[#1d130c] dark:text-white text-lg font-bold leading-tight">TechHouse
+                                        - Tashkent City</p>
+                                    <span
+                                        class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">Tanlangan</span>
+                                </div>
+                                <div class="flex items-end gap-3 justify-between mt-2">
+                                    <div class="flex flex-col gap-1">
+                                        <div class="flex items-center gap-2 text-[#a16a45] dark:text-[#c4a48c] text-sm">
+                                            <span class="material-symbols-outlined text-sm">location_on</span>
+                                            <span>Amir Temur ko'chasi, 1-uy</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-[#a16a45] dark:text-[#c4a48c] text-sm">
+                                            <span class="material-symbols-outlined text-sm">schedule</span>
+                                            <span>09:00 - 21:00</span>
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold shadow-md hover:bg-orange-600 transition-colors">
+                                        Tanlangan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Regular Card 1 -->
+                <div
+                    class="p-4 rounded-xl border border-[#f4ece6] dark:border-[#3d2c20] bg-white dark:bg-[#2d1f15] hover:border-primary/50 transition-all cursor-pointer group">
+                    <div class="flex flex-col @container">
+                        <div class="flex flex-col items-stretch justify-start rounded-lg">
+                            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg mb-4"
+                                data-alt="TechHouse Chilonzor Store Exterior"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQf8pYuVUiEEyMNMRO3lyFIcrotiL494xAnAlGRs2jxS0W_ieQg_KRoHnyprEFrT8cgS0WXScXAfIhyYfELimB6zFH3wQlgJXSltSvlIgC8XVm1Kj8WktR2a7yymAO3Vb1kuQAcoexOXFZcb2P-WLPgg3mHm70W5ikoKXlqgv_-9IobMBKapmJCVaFNQ1b7knus0aKHOX1tbmdlnif2UhBG_Wofk9_wnNaUiwmBGMk23IalaWp6b1IJzOPEtxM8f1MxrR53XnIWuwD");'>
+                            </div>
+                            <p class="text-[#1d130c] dark:text-white text-lg font-bold leading-tight">TechHouse -
+                                Chilonzor</p>
+                            <div class="flex items-end gap-3 justify-between mt-2">
+                                <div class="flex flex-col gap-1">
+                                    <div class="flex items-center gap-2 text-[#a16a45] dark:text-[#c4a48c] text-sm">
+                                        <span class="material-symbols-outlined text-sm">location_on</span>
+                                        <span>Qatortol ko'chasi, 28-uy</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-[#a16a45] dark:text-[#c4a48c] text-sm">
+                                        <span class="material-symbols-outlined text-sm">schedule</span>
+                                        <span>09:00 - 21:00</span>
+                                    </div>
+                                </div>
+                                <button
+                                    class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-9 px-4 bg-[#f4ece6] dark:bg-[#3d2c20] text-primary text-sm font-bold hover:bg-primary hover:text-white transition-all">
+                                    Tanlash
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Regular Card 2 -->
+                <div
+                    class="p-4 rounded-xl border border-[#f4ece6] dark:border-[#3d2c20] bg-white dark:bg-[#2d1f15] hover:border-primary/50 transition-all cursor-pointer">
+                    <div class="flex flex-col @container">
+                        <div class="flex flex-col items-stretch justify-start rounded-lg">
+                            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg mb-4"
+                                data-alt="TechHouse Yunusobod Branch"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCL3arvKGr3HgPT4CopxX7EkEui9ZAIdM9g9VWWKQVh18CygMpOL_JGgdAKoRIvM8MaBESsSSRBdZT2G-TcAqBZ0G76MkKbLh5ya0LRD71yP8kamza1NYetc5yAB89jDJ4E2-qFOpRkmpuzfxjrB50Z1JxWXtrvSMUfHxLuXj1BsdSMdoxqtAAJN4E2tyJtCB988DA11vXC6JT7ynKluu7VV9RIe-eqcEvoC8M5OtrFFgvyiy5pRj8tR7mhuIYh1HCsBNo2_CpfXanh");'>
+                            </div>
+                            <p class="text-[#1d130c] dark:text-white text-lg font-bold leading-tight">TechHouse -
+                                Yunusobod</p>
+                            <div class="flex items-end gap-3 justify-between mt-2">
+                                <div class="flex flex-col gap-1">
+                                    <div class="flex items-center gap-2 text-[#a16a45] dark:text-[#c4a48c] text-sm">
+                                        <span class="material-symbols-outlined text-sm">location_on</span>
+                                        <span>Ahmad Donish ko'chasi, 12-uy</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-[#a16a45] dark:text-[#c4a48c] text-sm">
+                                        <span class="material-symbols-outlined text-sm">schedule</span>
+                                        <span>09:00 - 21:00</span>
+                                    </div>
+                                </div>
+                                <button
+                                    class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-9 px-4 bg-[#f4ece6] dark:bg-[#3d2c20] text-primary text-sm font-bold hover:bg-primary hover:text-white transition-all">
+                                    Tanlash
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Map Section (60%) -->
+        <section class="flex-1 relative bg-[#e5e7eb] dark:bg-[#1a110a]">
+            <!-- Decorative Map Background -->
+            <div class="absolute inset-0 bg-cover bg-center opacity-80" data-location="Tashkent"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWLSSsKcYjWXU7bI66ek9XJ8j_H9DViVQBbwv0f0v76aSeOeOE5XstDIlToFSqe0UP-LsLINxut-MI24POU-sbksGn9Sby6wUTQ6v7m-KjP6tvfN-AkAazuHYmHqvkUH2hIwb5U_QPCnbLLwSmEo10ARUrCf57YwxG6pTG9VmCOiduSjIk6MPAOENM9VkJezQG3yDyw9Xl57nBmC6TC-3Eyy91Yu2r4HyQ3vEfGfV9HwOdbmYG26tiDkl843K8RHZTEMzBag6xwyQ0');">
+                <!-- Mock Map Grid/Overlay -->
+                <div class="absolute inset-0 bg-background-light/40 dark:bg-background-dark/40 backdrop-blur-[1px]">
+                </div>
+            </div>
+            <!-- Map Markers -->
+            <!-- Marker 1 (Active) -->
+            <div class="absolute top-[30%] left-[45%] group cursor-pointer">
+                <div class="relative flex flex-col items-center">
+                    <div class="bg-primary text-white p-2 rounded-full shadow-lg border-2 border-white animate-bounce">
+                        <span class="material-symbols-outlined block">storefront</span>
+                    </div>
+                    <!-- Tooltip / Popup -->
+                    <div
+                        class="absolute bottom-full mb-3 w-64 bg-white dark:bg-[#2d1f15] rounded-xl shadow-2xl p-0 overflow-hidden border border-primary z-10 transition-all transform origin-bottom scale-100">
+                        <div class="h-24 bg-cover bg-center" data-alt="Store preview thumbnail"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQbGfCrqkre8Se2ZE1oScI6U_4GKgpWVD234kUYAj_ASvhjcWAkRm3nyTOkXn-qCHhap6Ene6g4DXT7_vDBUbTZFyA3Re9Ot-73V7A1L2MiAvICvl0pGV_HqK8Q-InXFPSUdQcylRuA5iiBtxm12sfC33lVys4jORmVxEB-Tc7hQ7bG_hRDpoiAl26c-aD3Q3ypCPe5M81gyax5qKBeZRAcmSRUdqMTWE6nYjAzbCUCZ_hHNYNvcbPiAkFLc-6t16meAvWcEE5RACH');">
+                        </div>
+                        <div class="p-3">
+                            <h4 class="font-bold text-sm">TechHouse - Tashkent City</h4>
+                            <p class="text-xs text-[#a16a45] dark:text-[#c4a48c] mt-1">Amir Temur ko'chasi, 1-uy</p>
+                            <button class="w-full mt-3 py-1.5 bg-primary text-white text-xs font-bold rounded-lg">Bu
+                                yerdan olib ketish</button>
+                        </div>
+                        <div
+                            class="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-white dark:border-t-[#2d1f15]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Marker 2 -->
+            <div class="absolute top-[60%] left-[30%] cursor-pointer group">
+                <div
+                    class="bg-white dark:bg-[#3d2c20] text-primary p-2 rounded-full shadow-md border-2 border-primary hover:bg-primary hover:text-white transition-all">
+                    <span class="material-symbols-outlined block">storefront</span>
+                </div>
+            </div>
+            <!-- Marker 3 -->
+            <div class="absolute top-[20%] left-[70%] cursor-pointer group">
+                <div
+                    class="bg-white dark:bg-[#3d2c20] text-primary p-2 rounded-full shadow-md border-2 border-primary hover:bg-primary hover:text-white transition-all">
+                    <span class="material-symbols-outlined block">storefront</span>
+                </div>
+            </div>
+            <!-- Map Controls -->
+            <div class="absolute right-6 top-6 flex flex-col gap-2">
+                <button
+                    class="w-10 h-10 bg-white dark:bg-[#2d1f15] rounded-lg shadow-md flex items-center justify-center hover:bg-[#f4ece6] dark:hover:bg-[#3d2c20] transition-colors">
+                    <span class="material-symbols-outlined">add</span>
+                </button>
+                <button
+                    class="w-10 h-10 bg-white dark:bg-[#2d1f15] rounded-lg shadow-md flex items-center justify-center hover:bg-[#f4ece6] dark:hover:bg-[#3d2c20] transition-colors">
+                    <span class="material-symbols-outlined">remove</span>
+                </button>
+                <button
+                    class="w-10 h-10 bg-white dark:bg-[#2d1f15] rounded-lg shadow-md flex items-center justify-center hover:bg-[#f4ece6] dark:hover:bg-[#3d2c20] transition-colors mt-4">
+                    <span class="material-symbols-outlined">my_location</span>
+                </button>
+            </div>
+        </section>
+    </main>
+    <!-- Bottom Bar (Sticky) -->
+    <footer
+        class="fixed bottom-0 left-0 right-0 h-20 bg-white dark:bg-background-dark border-t border-[#f4ece6] dark:border-[#3d2c20] z-[60] px-10">
+        <div class="max-w-[1320px] mx-auto h-full flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined">check_circle</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xs font-medium text-[#a16a45] uppercase tracking-wider">Tanlangan do'kon</span>
+                    <span class="text-lg font-bold">TechHouse - Tashkent City</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="hidden lg:flex flex-col text-right">
+                    <span class="text-xs font-medium text-[#a16a45]">Taxminiy yetkazish vaqti</span>
+                    <span class="text-sm font-bold">Bugun, 14:00 dan keyin</span>
+                </div>
+                <button
+                    class="bg-primary text-white h-12 px-10 rounded-xl font-bold text-base shadow-lg shadow-primary/20 hover:bg-orange-600 transition-all flex items-center gap-2">
+                    <span>Tasdiqlash va davom etish</span>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

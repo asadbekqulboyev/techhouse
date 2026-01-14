@@ -1,0 +1,572 @@
+<html class="light" lang="uz">
+
+<head>
+
+
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>TechHouse - Oshxona texnikasi katalogi</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ff6600",
+            "background-light": "#fcfcfc",
+            "background-dark": "#121212",
+            "accent-blue": "#f8fafc"
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+        body {
+          @apply font-display bg-background-light text-[#1d130c] transition-colors duration-300;
+        }
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .material-symbols-outlined.filled {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .custom-checkbox:checked {
+        background-color: #ff6600;
+        border-color: #ff6600;
+      }
+    </style>
+
+</head>
+
+<body class="dark:bg-background-dark dark:text-white">
+  <header
+    class="sticky top-0 z-50 h-16 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-white/5">
+    <div class="max-w-[1320px] mx-auto h-full px-4 flex items-center justify-between gap-8">
+      <div class="flex items-center gap-2 shrink-0">
+        <div class="size-8 bg-primary rounded flex items-center justify-center text-white shadow-md">
+          <span class="material-symbols-outlined text-xl">bolt</span>
+        </div>
+        <h1 class="text-lg font-bold tracking-tight uppercase">TechHouse</h1>
+      </div>
+      <nav class="hidden xl:flex items-center gap-6 whitespace-nowrap">
+        <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Kategoriyalar</a>
+        <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Aksiyalar</a>
+        <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Brendlar</a>
+        <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Yangiliklar</a>
+        <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Kontaktlar</a>
+      </nav>
+      <div class="flex-1 max-w-md relative hidden md:block">
+        <input
+          class="w-full h-9 pl-10 pr-4 bg-gray-100 dark:bg-white/5 border-none rounded-full focus:ring-2 focus:ring-primary/30 text-xs transition-all"
+          placeholder="Mahsulotlarni izlash..." type="text" />
+        <span
+          class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button
+          class="size-9 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors relative group">
+          <span class="material-symbols-outlined text-xl text-primary filled">favorite</span>
+          <span
+            class="absolute -top-0.5 -right-0.5 size-4 bg-primary border-2 border-white dark:border-background-dark text-white text-[9px] font-bold rounded-full flex items-center justify-center">5</span>
+        </button>
+        <button
+          class="size-9 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors">
+          <span class="material-symbols-outlined text-xl">person</span>
+        </button>
+        <button
+          class="size-9 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-full transition-all relative">
+          <span class="material-symbols-outlined text-xl">shopping_cart</span>
+          <span
+            class="absolute -top-0.5 -right-0.5 size-4 bg-primary border-2 border-white dark:border-background-dark text-white text-[9px] font-bold rounded-full flex items-center justify-center">3</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-[1320px] mx-auto px-4 py-6">
+    <nav class="flex items-center gap-2 text-[12px] text-gray-500 mb-6">
+      <a class="hover:text-primary transition-colors" href="#">Bosh sahifa</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <a class="hover:text-primary transition-colors" href="#">Katalog</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <span class="text-gray-900 dark:text-gray-200 font-medium">Oshxona texnikasi</span>
+    </nav>
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+      <div>
+        <h1 class="text-3xl font-bold tracking-tight mb-1">Oshxona texnikasi</h1>
+        <p class="text-sm text-gray-500">124 ta mahsulot topildi</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <label class="text-xs font-semibold text-gray-500">Saralash:</label>
+        <select
+          class="h-10 pl-4 pr-10 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg text-xs font-medium focus:ring-primary focus:border-primary appearance-none cursor-pointer">
+          <option>Ommabop</option>
+          <option>Arzonroq</option>
+          <option>Qimmatroq</option>
+        </select>
+      </div>
+    </div>
+    <div class="flex flex-col lg:flex-row gap-8">
+      <aside class="w-full lg:w-[260px] shrink-0 space-y-8">
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider mb-4 border-b pb-2 border-gray-100 dark:border-white/5">
+            Kategoriyalar</h3>
+          <ul class="space-y-3">
+            <li><a class="text-sm text-primary font-semibold flex items-center justify-between" href="#">Muzlatgichlar
+                <span>(42)</span></a></li>
+            <li><a
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary transition-colors flex items-center justify-between"
+                href="#">Pishirish panellari <span>(28)</span></a></li>
+            <li><a
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary transition-colors flex items-center justify-between"
+                href="#">Duxovkalar <span>(15)</span></a></li>
+            <li><a
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary transition-colors flex items-center justify-between"
+                href="#">Idish yuvish <span>(12)</span></a></li>
+            <li><a
+                class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary transition-colors flex items-center justify-between"
+                href="#">Mikroto'lqinli pechlar <span>(27)</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider mb-4 border-b pb-2 border-gray-100 dark:border-white/5">
+            Narx (so'm)</h3>
+          <div class="space-y-4">
+            <div class="flex items-center gap-2">
+              <input
+                class="w-full h-9 bg-gray-50 dark:bg-white/5 border-gray-200 dark:border-white/10 rounded-lg text-xs focus:ring-primary"
+                placeholder="Dan" type="number" />
+              <span class="text-gray-400">—</span>
+              <input
+                class="w-full h-9 bg-gray-50 dark:bg-white/5 border-gray-200 dark:border-white/10 rounded-lg text-xs focus:ring-primary"
+                placeholder="Gacha" type="number" />
+            </div>
+            <input
+              class="w-full accent-primary h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-white/10"
+              type="range" />
+          </div>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider mb-4 border-b pb-2 border-gray-100 dark:border-white/5">
+            Brendlar</h3>
+          <div class="space-y-3 max-h-48 overflow-y-auto pr-2 custom-scrollbar">
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox" type="checkbox" />
+              <span
+                class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors">Samsung</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox" type="checkbox" />
+              <span
+                class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors">Artel</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox" type="checkbox" />
+              <span
+                class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors">LG</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox" type="checkbox" />
+              <span
+                class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors">Bosch</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox" type="checkbox" />
+              <span
+                class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors">Electrolux</span>
+            </label>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider mb-4 border-b pb-2 border-gray-100 dark:border-white/5">
+            Xususiyatlari</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-[11px] font-bold text-gray-400 uppercase mb-3">Energiya klassi</p>
+              <div class="space-y-2">
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox"
+                    type="checkbox" />
+                  <span class="text-sm text-gray-600 dark:text-gray-400">A+++</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input class="rounded border-gray-300 text-primary focus:ring-primary custom-checkbox"
+                    type="checkbox" />
+                  <span class="text-sm text-gray-600 dark:text-gray-400">A++</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <p class="text-[11px] font-bold text-gray-400 uppercase mb-3">Hajmi (Litr)</p>
+              <div class="grid grid-cols-2 gap-2">
+                <button
+                  class="h-8 border border-gray-200 dark:border-white/10 rounded text-[11px] hover:border-primary hover:text-primary transition-all">20-30L</button>
+                <button
+                  class="h-8 border border-gray-200 dark:border-white/10 rounded text-[11px] hover:border-primary hover:text-primary transition-all">30-50L</button>
+                <button
+                  class="h-8 border border-gray-200 dark:border-white/10 rounded text-[11px] hover:border-primary hover:text-primary transition-all">50-70L</button>
+                <button
+                  class="h-8 border border-gray-200 dark:border-white/10 rounded text-[11px] hover:border-primary hover:text-primary transition-all">70L+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="w-full h-11 bg-primary/10 text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all text-xs">Filtrlarni
+          tozalash</button>
+      </aside>
+      <div class="flex-1">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mb-12">
+          <div
+            class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:shadow-xl transition-all">
+            <div class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
+              -15%</div>
+            <button
+              class="absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10 group/heart">
+              <span class="material-symbols-outlined text-xl group-active:filled">favorite</span>
+            </button>
+            <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+              <img alt="Oven"
+                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUyeJHhNN7rvPXpBllgNnmjTR9XGUd3QlStYlpFmmPGtIe-BwwaufjpSjMBSdtE4WAcP3IimE1_vvxIk3ourZ7YTArV8RI_to7K9gXL-kwNqI8rdTwG8tt915M2OEmhqAelkn5FUO5hJWdf1Jll8qpUI8xnAU0qu128Q_P05ugyQ2qrRcdrXfbNhijNAkY_JtmqyluYpxbR36FGl_0hKPpJUpzrW7OG99NNQ0d_rdUSfpJniYRCOOq5uWJF8YpO32TaeKnBnMFvU6x" />
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Samsung Dual Cook Flex NV75R76RSR</h4>
+              <div class="flex flex-col">
+                <span class="text-[9px] text-gray-400 line-through">9 500 000 so'm</span>
+                <span class="text-sm font-bold text-primary">8 250 000 so‘m</span>
+              </div>
+              <button
+                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">shopping_basket</span>
+                Savatga qo‘shish
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:shadow-xl transition-all">
+            <button
+              class="absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10 group/heart">
+              <span class="material-symbols-outlined text-xl">favorite</span>
+            </button>
+            <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+              <img alt="Washing Machine"
+                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjiCDwmefDFSx1KHZ_OKnCtL4D5XEJCFbKZwLiNH5QtnhXPpCKcovBGZqsXQIDw0eYLYI0-FX17LLGVovzBctpUD23awtrPpWIhNJTdzcslkrHgkhsktQoYJ0b9ShSJj6wxkRSh_hiIf11r4UOA39t9H8XbWYNASXYsz4XQJSPOvIGm0cnUynRFgcTelXkAKDo6TCSNxsc7M4oNnLIXAhEKwSvizRpuhAgtecqymXmfFDSI0HCBzueZmaMaV6yVD14ZcPE5BSZ10Al" />
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">LG Vivace AI DD 8.5kg F4V5VS0W</h4>
+              <div class="flex flex-col">
+                <span class="text-sm font-bold text-primary">5 120 000 so‘m</span>
+              </div>
+              <button
+                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">shopping_basket</span>
+                Savatga qo‘shish
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:shadow-xl transition-all">
+            <div class="absolute top-3 left-3 bg-primary text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
+              BESTSELLER</div>
+            <button
+              class="absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10 group/heart">
+              <span class="material-symbols-outlined text-xl filled text-primary">favorite</span>
+            </button>
+            <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+              <img alt="Fridge"
+                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM45zXkPAyE0yWHaNfBImcb4DsHeF6TRg3FyIUsDsXYazjsg-wDanKDezt25nkdjpb10LXC-q_AvmQvgDuxeWN1XFqErq_iME6axk4Rj4dl3Nz392ZYCqWFBCb3QpYt5fJSkuYF7fyI2JOexBlDQT7OpW41A0LUO5skW6AJohbmMRi6U3Gk-HLpr6bKITAke5rtjEYhgOfd_LzmhsV2Qs7dMlozMoxlLQJ-DMUVI--46EIfe1f8OzRViynyXZ4T3Gxrl09XwExMXd4" />
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Bosch Serie 6 Smart NoFrost KGN39XI326</h4>
+              <div class="flex flex-col">
+                <span class="text-sm font-bold text-primary">12 000 000 so‘m</span>
+              </div>
+              <button
+                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">shopping_basket</span>
+                Savatga qo‘shish
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:shadow-xl transition-all">
+            <button
+              class="absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10">
+              <span class="material-symbols-outlined text-xl">favorite</span>
+            </button>
+            <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+              <img alt="Microwave"
+                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2075p1YR0abIwccxiLFpX-DKTMyat5hndXozp2dc6ywQ-PGCwFVLCS2lMi2a6nqtKJT6LPKItNz6F_UKPAKbwCpVOxLUOwwwHRGNE9u1Neo10a0YHZsURfGZa6USNe82aSoOJUgOIoYBd_N_mD3no_s47MwKWgM8A7eTIyXBBTWyHNiGfj6grFOJs_jjsDtC5w9GB3SwtcEjwLJ4tedyVjxDasZwviH0zCUfm5wYnWYWZuNBxlD4MZVtvtbmRywd-Sg90JQo8g7fv" />
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Artel Microwave 20L Solo MWP-101</h4>
+              <div class="flex flex-col">
+                <span class="text-sm font-bold text-primary">1 100 000 so‘m</span>
+              </div>
+              <button
+                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">shopping_basket</span>
+                Savatga qo‘shish
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:shadow-xl transition-all">
+            <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+              <img alt="Appliance"
+                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB30XnapiodFnyn7uQmpLXhWLgUaAdjjtAf9I4r8cypdhYw0QW-MHDubgrTbtnLdRK-urV0fdsnfwcGDONVkKtUtahGQ6kIFy69uH9DI8iJnDaEfOvgJG3c7a0mptNl5tuNWtlWb86ZVraV6w85EZQwGusn95-L40yGzjhMIv14JkIV-orpDqmccn6F30JInqhZdBUNjQa4C9BhUh7b-_H_uEB1ZDYLt_cCO4o6twKRmVom1BPLp6O89FvSNloxX3F3NG0DAgxvmRnz" />
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Samsung Grill MW5000T Smart</h4>
+              <p class="text-sm font-bold text-primary">2 450 000 so‘m</p>
+              <button
+                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">shopping_basket</span>
+                Savatga qo‘shish
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:shadow-xl transition-all">
+            <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+              <img alt="Appliance"
+                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPnv9dSF-MazCqeFP-FYhsrSfmKZG7UMeNqalugCc5yVAgQWfO7Yc_WAxFTIiBaXM-r7uBMZNN34TTFk3xOxhtd2ZBs829KQNm_eJRalFZcJlpTcLDgWp8XMvFgeuLQBWnKGa1XbxTx2i0x4xO4xinnvOxDJecpxpSVMMPjwHPIdUzZIDHo9lm8whluK-vfNWDsxL2grt8nJQygbWMovphQ-JMrBg-y_PwSll5r1Wm9LpAkmqn5b_bD8OE1_CiT-9JlCjKlRtH_j0b" />
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Xiaomi Vacuum Cleaner G11 Wireless</h4>
+              <p class="text-sm font-bold text-primary">4 800 000 so‘m</p>
+              <button
+                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">shopping_basket</span>
+                Savatga qo‘shish
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:shadow-xl transition-all">
+            <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+              <img alt="Appliance"
+                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV1-kWJSg4O1RhbR4RXypo0g87Lb64MhpLXO8_d7NLmqk9vHv1oYaC2CxGwwpciaFjGB-rhVz-884eT8gU3sxFQwIlM-iHMTLAjtsJ-jmaLzJ5cAqAi1MmM13m8pVTkm8YHNxKKGv1L6vJT9WjsR0xtdF8uh0dHKicWwZVeSUnaENQlIzVt2sxWloIBDq8icE6v-THLjUEQXQMwFps7rc6NZ5CpOr0h93nmHXKdjhOi-ykQap7E0M7zV9_6KI7kpwPGHHqO3QyUUtY" />
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">DeLonghi Magnifica S Cappuccino</h4>
+              <p class="text-sm font-bold text-primary">7 300 000 so‘m</p>
+              <button
+                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">shopping_basket</span>
+                Savatga qo‘shish
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:shadow-xl transition-all">
+            <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+              <img alt="Appliance"
+                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBJ0ScRtqhT4ATSZgxHZmKwn0XkNmpswevcVpNQ6MUl8_6zz-nJ6fowISETNaRxYaas9O2c9wRONYt0ew_BMntCwKV5yQLR4Ho8NSFd1ud46G11zRRKWY-VUr8bhEuEh6kCqMHoG4KHPo_zn2pOyT0r3Qwbxt4KrsDA4kq5UfizsHDzpMBNXZgPGzW_AAKKu6OJ3zZ9sblZt0gzCo9DdJ-5tr_rui9cDb0U4Dbh1SwwnNpLM3V134XS8FDvUy7W8T70Hjn3FHBBqis" />
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Philips Steam Iron Azur Elite</h4>
+              <p class="text-sm font-bold text-primary">1 200 000 so‘m</p>
+              <button
+                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm">shopping_basket</span>
+                Savatga qo‘shish
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <button
+            class="size-10 rounded-lg border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all group">
+            <span class="material-symbols-outlined text-xl">chevron_left</span>
+          </button>
+          <button class="size-10 rounded-lg bg-primary text-white font-bold text-sm">1</button>
+          <button
+            class="size-10 rounded-lg border border-gray-200 dark:border-white/10 font-bold text-sm hover:border-primary hover:text-primary transition-all">2</button>
+          <button
+            class="size-10 rounded-lg border border-gray-200 dark:border-white/10 font-bold text-sm hover:border-primary hover:text-primary transition-all">3</button>
+          <span class="px-2 text-gray-400">...</span>
+          <button
+            class="size-10 rounded-lg border border-gray-200 dark:border-white/10 font-bold text-sm hover:border-primary hover:text-primary transition-all">12</button>
+          <button
+            class="size-10 rounded-lg border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all group">
+            <span class="material-symbols-outlined text-xl">chevron_right</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <section class="py-16 bg-[#fcfcfc] dark:bg-[#121212] border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-[1320px] mx-auto px-4">
+      <div class="text-center mb-12">
+        <h3 class="text-2xl font-bold tracking-tight mb-2">TechHouse Club</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Sodiq mijozlarimiz uchun maxsus imtiyozlar dunyosi</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div
+          class="bg-white dark:bg-white/5 rounded-2xl p-8 border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col">
+          <div class="flex items-center justify-between mb-6">
+            <div class="size-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-3xl">military_tech</span>
+            </div>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-white/10 rounded-full text-[10px] font-bold tracking-wider">1x
+              BALLAR</span>
+          </div>
+          <h4 class="text-xl font-bold mb-6">Bronza</h4>
+          <ul class="space-y-4 mb-8 flex-grow">
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+              <span>Sodiqlik ballari</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+              <span>Maxsus chegirmalar</span>
+            </li>
+          </ul>
+          <button class="w-full h-12 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all">A'zo
+            bo'lish</button>
+        </div>
+        <div
+          class="bg-white dark:bg-white/5 rounded-2xl p-8 border-2 border-primary shadow-xl hover:shadow-2xl transition-all relative overflow-hidden flex flex-col scale-105 z-10">
+          <div
+            class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-4 py-1 rounded-bl-xl uppercase tracking-widest">
+            Ommabop
+          </div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="size-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-3xl">workspace_premium</span>
+            </div>
+            <span class="px-3 py-1 bg-primary text-white rounded-full text-[10px] font-bold tracking-wider">2x
+              BALLAR</span>
+          </div>
+          <h4 class="text-xl font-bold mb-6">Kumush</h4>
+          <ul class="space-y-4 mb-8 flex-grow">
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+              <span class="font-semibold">2x ko'p ballar</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+              <span>Ustuvor xizmat</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+              <span>Bronza barcha afzalliklari</span>
+            </li>
+          </ul>
+          <button
+            class="w-full h-12 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">A'zo
+            bo'lish</button>
+        </div>
+        <div
+          class="bg-white dark:bg-white/5 rounded-2xl p-8 border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col">
+          <div class="flex items-center justify-between mb-6">
+            <div class="size-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-3xl">stars</span>
+            </div>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-white/10 rounded-full text-[10px] font-bold tracking-wider">5x
+              BALLAR</span>
+          </div>
+          <h4 class="text-xl font-bold mb-6">Oltin</h4>
+          <ul class="space-y-4 mb-8 flex-grow">
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+              <span>Maksimal keshbek</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+              <span>Bepul yetkazish</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="material-symbols-outlined text-black dark:text-white text-lg">verified</span>
+              <span>Eksklyuziv takliflar</span>
+            </li>
+          </ul>
+          <button class="w-full h-12 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all">A'zo
+            bo'lish</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-background-dark text-gray-400 py-10 border-t border-white/5">
+    <div class="max-w-[1320px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="size-7 bg-primary rounded flex items-center justify-center text-white">
+            <span class="material-symbols-outlined text-lg">bolt</span>
+          </div>
+          <h1 class="text-lg font-bold tracking-tight text-white uppercase">TechHouse</h1>
+        </div>
+        <p class="text-xs leading-relaxed max-w-xs">
+          O‘zbekistondagi eng zamonaviy maishiy texnika va elektronika do‘konlar tarmog‘i.
+        </p>
+        <div class="flex gap-2">
+          <a class="size-8 bg-white/5 rounded flex items-center justify-center hover:bg-primary transition-colors"
+            href="#"><span class="material-symbols-outlined text-base">share</span></a>
+          <a class="size-8 bg-white/5 rounded flex items-center justify-center hover:bg-primary transition-colors"
+            href="#"><span class="material-symbols-outlined text-base">public</span></a>
+          <a class="size-8 bg-white/5 rounded flex items-center justify-center hover:bg-primary transition-colors"
+            href="#"><span class="material-symbols-outlined text-base">alternate_email</span></a>
+        </div>
+      </div>
+      <div>
+        <h6 class="font-bold text-xs text-white uppercase tracking-wider mb-4">Xaridorlarga</h6>
+        <ul class="space-y-2 text-xs">
+          <li><a class="hover:text-primary transition-colors" href="#">Yetkazib berish</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">To‘lov turlari</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Muddatli to‘lov</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Kafolat</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6 class="font-bold text-xs text-white uppercase tracking-wider mb-4">Kompaniya</h6>
+        <ul class="space-y-2 text-xs">
+          <li><a class="hover:text-primary transition-colors" href="#">Biz haqimizda</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Do‘konlar</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Vakansiyalar</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">Kontaktlar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6 class="font-bold text-xs text-white uppercase tracking-wider mb-4">Kontakt</h6>
+        <ul class="space-y-3 text-xs">
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-lg">call</span>
+            <span class="text-white font-semibold">+998 (71) 200-00-00</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-lg">mail</span>
+            <span>info@techhouse.uz</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-[1320px] mx-auto px-4 border-t border-white/5 pt-6 text-center text-[10px] text-gray-500">
+      <p>© 2024 TechHouse. O'zbekiston bo'ylab xizmat ko'rsatiladi.</p>
+    </div>
+  </footer>
+
+  ```
+</body>
+
+</html>

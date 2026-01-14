@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="light" lang="uz">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Savat - TechHouse</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6600",
+                        "background-light": "#fcfcfc",
+                        "background-dark": "#0f0f0f",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-display bg-background-light text-[#1a1a1a] transition-colors duration-300 min-h-screen;
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+
+<body class="dark:bg-background-dark dark:text-white">
+    <header class="h-20 bg-white/80 dark:bg-background-dark/80 backdrop-blur-xl sticky top-0 z-50">
+        <div class="max-w-[1320px] mx-auto h-full px-4 sm:px-6 flex items-center justify-between">
+            <a class="flex items-center gap-3 shrink-0" href="/">
+                <div
+                    class="size-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                    <span class="material-symbols-outlined text-2xl filled-icon">bolt</span>
+                </div>
+                <h1 class="text-xl font-bold tracking-tighter uppercase">TechHouse</h1>
+            </a>
+            <div class="flex-grow max-w-2xl mx-6 sm:mx-12 hidden lg:block">
+                <div class="relative group">
+                    <input
+                        class="w-full bg-gray-100 dark:bg-white/5 border-none rounded-2xl px-12 h-11 text-sm focus:ring-2 focus:ring-primary/20 transition-all"
+                        placeholder="Mahsulotlarni qidirish..." type="text" />
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 sm:gap-8">
+                <a class="hidden sm:flex flex-col items-center text-gray-400 hover:text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-2xl">balance</span>
+                </a>
+                <a class="hidden sm:flex flex-col items-center text-gray-400 hover:text-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-2xl">favorite</span>
+                </a>
+                <div class="relative">
+                    <a class="flex flex-col items-center text-primary transition-colors" href="#">
+                        <span class="material-symbols-outlined text-2xl filled-icon">shopping_cart</span>
+                    </a>
+                    <span
+                        class="absolute -top-1.5 -right-1.5 bg-primary text-white text-[10px] font-bold size-4 rounded-full flex items-center justify-center border-2 border-white dark:border-background-dark">2</span>
+                </div>
+                <a class="flex items-center gap-2 font-bold text-xs sm:text-sm bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 sm:px-6 py-2.5 rounded-2xl hover:opacity-90 transition-opacity"
+                    href="#">
+                    <span class="material-symbols-outlined text-xl">person</span>
+                    <span class="hidden xs:inline">Kirish</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-[1320px] mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        <nav class="flex items-center gap-3 text-sm text-gray-400 mb-8 sm:mb-10">
+            <a class="hover:text-primary transition-colors" href="#">Asosiy</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <span class="text-gray-900 dark:text-gray-200 font-semibold tracking-wide">Savatcha</span>
+        </nav>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-10 sm:mb-12">Savatchangizda 2 ta mahsulot bor</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <div class="lg:col-span-8 space-y-4 sm:space-y-6">
+                <div
+                    class="bg-white dark:bg-white/5 rounded-[1.5rem] sm:rounded-[2rem] p-4 sm:p-8 flex flex-col sm:flex-row gap-6 sm:gap-8 items-start sm:items-center group transition-all duration-300">
+                    <div
+                        class="w-full sm:w-48 h-48 bg-gray-50 dark:bg-white/5 rounded-2xl p-6 shrink-0 flex items-center justify-center overflow-hidden">
+                        <img alt="Samsung Premium Refrigerator"
+                            class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO2d-iPjOqxRhPopCqiSp_jQ8Elt_yyDflO8a-AcMYfpqhmCTraohb7SCFYLvYY9Yjkr--92Lu7UmumuRwCCClF_bHw-QPmklp-heqix5zTpMyN5OWBBYlVYJ0birlShhlGbDTGL1_aIAL06nj0iuO1SaHxViXaNjx6nd6GxdyIyIv0ZF5W-cSlTbwsviGXA22YyhYMBG-MEpGjmoWJ8YVPXdkmKHPt-IlEVo-dNjGk5V7KXOHsSfSWYhXMs12zOh1gZXOtElsNkIB" />
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-lg sm:text-xl font-bold leading-tight mb-1">Samsung RT38 Muzlatgich</h3>
+                        <p class="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400 mb-3 tracking-wide">
+                            Silver, 380L, Twin Cooling Plus</p>
+                        <div class="text-gray-400 text-xs sm:text-sm font-medium">8 500 000 so'm / dona</div>
+                    </div>
+                    <div
+                        class="flex flex-row sm:flex-col items-center sm:items-end justify-between w-full sm:w-auto h-full gap-4 sm:gap-6">
+                        <button class="order-2 sm:order-1 text-gray-300 hover:text-red-500 transition-colors p-2">
+                            <span class="material-symbols-outlined text-xl">close</span>
+                        </button>
+                        <div class="order-1 sm:order-2 flex items-center gap-4 sm:gap-5">
+                            <div class="flex items-center gap-1 bg-gray-50 dark:bg-white/5 p-1 rounded-xl">
+                                <button
+                                    class="size-8 flex items-center justify-center text-gray-400 hover:text-primary transition-colors hover:bg-white dark:hover:bg-white/10 rounded-lg">
+                                    <span class="material-symbols-outlined text-lg">remove</span>
+                                </button>
+                                <span class="font-bold w-6 text-center text-sm sm:text-base">1</span>
+                                <button
+                                    class="size-8 flex items-center justify-center text-gray-400 hover:text-primary transition-colors hover:bg-white dark:hover:bg-white/10 rounded-lg">
+                                    <span class="material-symbols-outlined text-lg">add</span>
+                                </button>
+                            </div>
+                            <div class="sm:w-36 text-right">
+                                <div class="text-lg sm:text-xl font-bold tracking-tight text-gray-900 dark:text-white">8
+                                    500 000 so'm</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-white/5 rounded-[1.5rem] sm:rounded-[2rem] p-4 sm:p-8 flex flex-col sm:flex-row gap-6 sm:gap-8 items-start sm:items-center group transition-all duration-300">
+                    <div
+                        class="w-full sm:w-48 h-48 bg-gray-50 dark:bg-white/5 rounded-2xl p-6 shrink-0 flex items-center justify-center overflow-hidden">
+                        <img alt="LG SmartCool Refrigerator"
+                            class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhmdg2nKaaIfIi6ML41xVbAy8zuwnog29Q5Mq-G7TNj2sv8wZleVxA9vzcJ8uAyD6tt82sq8SdGn_9TwmoXg_Q41dQmo2sddLYhFPcz-iHTfduo7LASHEIJCGOQwdgb-fN096aVKQqBQgSczDTSCNdBEwg95iZuLg2gD-MO6vuWnKZAv5FMlzKrZcoIwgAD1rl_85VkwLlVDQNurhsDBIgNdNBA1vJ2a7ec45vEbZdBd7kFb78y0LEM28sli-finjn-Xpy_1oFEKb4" />
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-lg sm:text-xl font-bold leading-tight mb-1">LG SmartCool Muzlatgich</h3>
+                        <p class="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400 mb-3 tracking-wide">
+                            Grey Edition, 400L</p>
+                        <div class="text-gray-400 text-xs sm:text-sm font-medium">9 100 000 so'm / dona</div>
+                    </div>
+                    <div
+                        class="flex flex-row sm:flex-col items-center sm:items-end justify-between w-full sm:w-auto h-full gap-4 sm:gap-6">
+                        <button class="order-2 sm:order-1 text-gray-300 hover:text-red-500 transition-colors p-2">
+                            <span class="material-symbols-outlined text-xl">close</span>
+                        </button>
+                        <div class="order-1 sm:order-2 flex items-center gap-4 sm:gap-5">
+                            <div class="flex items-center gap-1 bg-gray-50 dark:bg-white/5 p-1 rounded-xl">
+                                <button
+                                    class="size-8 flex items-center justify-center text-gray-400 hover:text-primary transition-colors hover:bg-white dark:hover:bg-white/10 rounded-lg">
+                                    <span class="material-symbols-outlined text-lg">remove</span>
+                                </button>
+                                <span class="font-bold w-6 text-center text-sm sm:text-base">1</span>
+                                <button
+                                    class="size-8 flex items-center justify-center text-gray-400 hover:text-primary transition-colors hover:bg-white dark:hover:bg-white/10 rounded-lg">
+                                    <span class="material-symbols-outlined text-lg">add</span>
+                                </button>
+                            </div>
+                            <div class="sm:w-36 text-right">
+                                <div class="text-lg sm:text-xl font-bold tracking-tight text-gray-900 dark:text-white">9
+                                    100 000 so'm</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-10 sm:pt-16">
+                    <p
+                        class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-8 sm:mb-10 text-center sm:text-left">
+                        Rasmiy hamkorlarimiz</p>
+                    <div
+                        class="flex flex-wrap justify-center sm:justify-start items-center gap-8 sm:gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
+                        <span class="text-xl sm:text-2xl font-black italic tracking-tighter">SAMSUNG</span>
+                        <span class="text-xl sm:text-2xl font-black italic tracking-tighter">LG</span>
+                        <span class="text-xl sm:text-2xl font-black italic tracking-tighter">BEKO</span>
+                        <span class="text-xl sm:text-2xl font-black italic tracking-tighter">ARTEL</span>
+                        <span class="text-xl sm:text-2xl font-black italic tracking-tighter">BOSCH</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-4 lg:sticky lg:top-28">
+                <div
+                    class="bg-white dark:bg-white/5 rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-10 shadow-xl shadow-gray-100/30 dark:shadow-none border border-gray-50 dark:border-white/5">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-6 sm:mb-8">Xarid tafsilotlari</h3>
+                    <div class="space-y-4 mb-8 sm:mb-10">
+                        <div class="flex justify-between items-center text-sm sm:text-base">
+                            <span class="text-gray-500 font-medium">Mahsulotlar (2 ta)</span>
+                            <span class="font-bold text-gray-900 dark:text-white">17 600 000 so'm</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm sm:text-base">
+                            <span class="text-gray-500 font-medium">Yetkazib berish</span>
+                            <span
+                                class="text-green-500 font-bold tracking-wide text-[10px] bg-green-50 dark:bg-green-500/10 px-3 py-1 rounded-lg">BEPUL</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm sm:text-base">
+                            <span class="text-gray-500 font-medium">Chegirma</span>
+                            <span class="font-bold text-red-500">- 400 000 so'm</span>
+                        </div>
+                    </div>
+                    <div
+                        class="mb-8 sm:mb-10 p-1 bg-gray-100 dark:bg-white/5 rounded-2xl flex items-center focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+                        <input
+                            class="flex-grow bg-transparent border-none px-4 h-11 text-xs sm:text-sm font-medium placeholder:text-gray-400 focus:ring-0"
+                            placeholder="Promokod bormi?" type="text" />
+                        <button
+                            class="h-9 px-4 bg-white dark:bg-white/10 text-gray-900 dark:text-white font-bold rounded-xl text-[10px] hover:bg-primary hover:text-white transition-all uppercase tracking-widest">Qo'shish</button>
+                    </div>
+                    <div class="mb-8 sm:mb-10 flex flex-col gap-1">
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">To'lov uchun
+                            jami</span>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-900 dark:text-white font-medium text-sm">Jami summa</span>
+                            <span class="text-2xl sm:text-[28px] font-bold text-primary tracking-tight">17 200 000
+                                so'm</span>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full h-14 sm:h-16 bg-primary text-white font-bold rounded-2xl text-base sm:text-lg hover:shadow-2xl hover:shadow-primary/30 transform hover:-translate-y-0.5 transition-all duration-300">
+                        Xaridni rasmiylashtirish
+                    </button>
+                    <div
+                        class="mt-6 sm:mt-8 flex items-center justify-center gap-2 text-[10px] sm:text-xs font-medium text-gray-400">
+                        <span class="material-symbols-outlined text-sm">verified_user</span>
+                        <span>SSL xavfsiz himoyalangan to'lovlar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-white dark:bg-background-dark border-t border-gray-100 dark:border-white/5 mt-16 sm:mt-24">
+        <div
+            class="max-w-[1320px] mx-auto px-4 sm:px-6 py-12 sm:py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-16">
+            <div class="col-span-1">
+                <a class="flex items-center gap-3 mb-6 sm:mb-8" href="/">
+                    <div
+                        class="size-9 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                        <span class="material-symbols-outlined text-xl filled-icon">bolt</span>
+                    </div>
+                    <h1 class="text-lg font-bold tracking-tighter uppercase">TechHouse</h1>
+                </a>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-[240px]">Sizning uyingiz uchun eng yaxshi premium
+                    texnologiyalar olami.</p>
+            </div>
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-6 sm:mb-8">
+                    Kompaniya</h5>
+                <ul class="space-y-4 text-sm font-medium text-gray-400">
+                    <li><a class="hover:text-primary transition-colors" href="#">Biz haqimizda</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Do'konlar manzili</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Bo'sh ish o'rinlari</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-6 sm:mb-8">
+                    Mijozlarga xizmat</h5>
+                <ul class="space-y-4 text-sm font-medium text-gray-400">
+                    <li><a class="hover:text-primary transition-colors" href="#">Yetkazib berish</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Bo'lib to'lash (Rassrochka)</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Kafolat shartlari</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-6 sm:mb-8">Aloqa
+                    markazi</h5>
+                <div class="space-y-5 sm:space-y-6">
+                    <p class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">+998 71 200 00 00</p>
+                    <div class="flex gap-4">
+                        <a class="size-10 bg-gray-50 dark:bg-white/5 rounded-xl flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-all"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">public</span>
+                        </a>
+                        <a class="size-10 bg-gray-50 dark:bg-white/5 rounded-xl flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-all"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">send</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-[1320px] mx-auto px-4 sm:px-6 py-8 border-t border-gray-50 dark:border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p class="text-[10px] sm:text-xs font-medium text-gray-400 text-center">© 2024 TechHouse Home Appliances.
+                Barcha huquqlar himoyalangan.</p>
+            <div class="flex gap-6 sm:gap-8">
+                <span class="text-[9px] sm:text-[10px] font-bold text-gray-300 uppercase tracking-widest">O'zbekiston
+                    bo'ylab</span>
+                <span class="text-[9px] sm:text-[10px] font-bold text-gray-300 uppercase tracking-widest">Xavfsiz
+                    to'lov</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

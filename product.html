@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html class="light" lang="uz">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Samsung RT38 Muzlatgich - TechHouse</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6600",
+                        "background-light": "#fcfcfc",
+                        "background-dark": "#121212",
+                        "accent-blue": "#f8fafc"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-display bg-background-light text-[#1d130c] transition-colors duration-300 min-h-screen;
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+
+<body class="dark:bg-background-dark dark:text-white">
+    <header
+        class="sticky top-0 z-50 h-16 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-white/5">
+        <div class="max-w-[1320px] mx-auto h-full px-4 flex items-center justify-between gap-8">
+            <div class="flex items-center gap-2 shrink-0">
+                <div class="size-8 bg-primary rounded flex items-center justify-center text-white shadow-md">
+                    <span class="material-symbols-outlined text-xl">bolt</span>
+                </div>
+                <h1 class="text-lg font-bold tracking-tight uppercase">TechHouse</h1>
+            </div>
+            <nav class="hidden xl:flex items-center gap-6 whitespace-nowrap">
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors"
+                    href="#">Kategoriyalar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Aksiyalar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Brendlar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors"
+                    href="#">Yangiliklar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Kontaktlar</a>
+            </nav>
+            <div class="flex-1 max-w-md relative hidden md:block">
+                <input
+                    class="w-full h-9 pl-10 pr-4 bg-gray-100 dark:bg-white/5 border-none rounded-full focus:ring-2 focus:ring-primary/30 text-xs transition-all"
+                    placeholder="Mahsulotlarni izlash..." type="text" />
+                <span
+                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button
+                    class="size-9 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors relative group">
+                    <span class="material-symbols-outlined text-xl text-primary filled">favorite</span>
+                    <span
+                        class="absolute -top-0.5 -right-0.5 size-4 bg-primary border-2 border-white dark:border-background-dark text-white text-[9px] font-bold rounded-full flex items-center justify-center">5</span>
+                </button>
+                <a href="login.html"
+                    class="size-9 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors">
+                    <span class="material-symbols-outlined text-xl">person</span>
+                </a>
+                <button
+                    class="size-9 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-full transition-all relative">
+                    <span class="material-symbols-outlined text-xl">shopping_cart</span>
+                    <span
+                        class="absolute -top-0.5 -right-0.5 size-4 bg-primary border-2 border-white dark:border-background-dark text-white text-[9px] font-bold rounded-full flex items-center justify-center">3</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-[1320px] mx-auto px-4 py-6">
+        <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+            <a class="hover:text-primary transition-colors" href="#">Home</a>
+            <span class="material-symbols-outlined text-base">chevron_right</span>
+            <a class="hover:text-primary transition-colors" href="#">Oshxona texnikasi</a>
+            <span class="material-symbols-outlined text-base">chevron_right</span>
+            <a class="hover:text-primary transition-colors" href="#">Muzlatgichlar</a>
+            <span class="material-symbols-outlined text-base">chevron_right</span>
+            <span class="text-gray-900 dark:text-gray-200 font-medium">Samsung RT38</span>
+        </nav>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-7 space-y-4">
+                <div
+                    class="aspect-square bg-white dark:bg-white/5 rounded-2xl border border-gray-100 dark:border-white/10 flex items-center justify-center p-12 overflow-hidden group">
+                    <img alt="Samsung RT38 Muzlatgich Silver"
+                        class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                        id="mainImage"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO2d-iPjOqxRhPopCqiSp_jQ8Elt_yyDflO8a-AcMYfpqhmCTraohb7SCFYLvYY9Yjkr--92Lu7UmumuRwCCClF_bHw-QPmklp-heqix5zTpMyN5OWBBYlVYJ0birlShhlGbDTGL1_aIAL06nj0iuO1SaHxViXaNjx6nd6GxdyIyIv0ZF5W-cSlTbwsviGXA22YyhYMBG-MEpGjmoWJ8YVPXdkmKHPt-IlEVo-dNjGk5V7KXOHsSfSWYhXMs12zOh1gZXOtElsNkIB" />
+                </div>
+                <div class="grid grid-cols-4 gap-4">
+                    <div
+                        class="aspect-square bg-white dark:bg-white/5 rounded-xl border border-primary p-2 cursor-pointer overflow-hidden">
+                        <img alt="Samsung Refrigerator Detail 1" class="w-full h-full object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO2d-iPjOqxRhPopCqiSp_jQ8Elt_yyDflO8a-AcMYfpqhmCTraohb7SCFYLvYY9Yjkr--92Lu7UmumuRwCCClF_bHw-QPmklp-heqix5zTpMyN5OWBBYlVYJ0birlShhlGbDTGL1_aIAL06nj0iuO1SaHxViXaNjx6nd6GxdyIyIv0ZF5W-cSlTbwsviGXA22YyhYMBG-MEpGjmoWJ8YVPXdkmKHPt-IlEVo-dNjGk5V7KXOHsSfSWYhXMs12zOh1gZXOtElsNkIB" />
+                    </div>
+                    <div
+                        class="aspect-square bg-white dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10 p-2 cursor-pointer hover:border-primary transition-colors overflow-hidden">
+                        <img alt="Samsung Refrigerator Inside View" class="w-full h-full object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjtNWrHuSi2TR-BjffR86C-s4nN6PSGCcssLwH4umo-fUiZ1HnK90o1qGwiP6iK3QB9BvGpzGWvpnTjTLgbdzjVKFPlT-V6-o6LICFuoFJIAp536jLwvJMrXfP2PXX2vA4KSASqaNdnpaDrfIij1949U06-iyG0Y3qpeE3M_PdBbz_Fi8en_rHQaeLa_DT01Pu8Wwltv3WmmExcWmXIxYBEcEyPKoAJ9G5_DY5IprnQqxLNEk0C1ftscIiBVRWxXtTjHkc_LQ1bs0D" />
+                    </div>
+                    <div
+                        class="aspect-square bg-white dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10 p-2 cursor-pointer hover:border-primary transition-colors overflow-hidden">
+                        <img alt="Refrigerator Door Handle Detail" class="w-full h-full object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo_R_6UbQz9Jl6ZsS9RfbUADpg2BnPcS2cbTKtkOg4sKNG1LyMEx8aogwN5ufzFbo2C4o6GwHcahaJ-qboQ1M0uvsB6nr-k-yFAw7vj7aSXfPk2hZp6fkBFVTRc292og7QJwR7ad4fsjZrTEwT28Ugv72R05zurX_aqUTSw0LbAI5-zgQa5asDDZk4TblIQTcUohq6JfZbe5bnGkUIsFxh54wlz2HLjR-JTKHQm1pMYoMRX6tAplHhgrMNBqa50ZCDT7nlZ6zAt_9B" />
+                    </div>
+                    <div
+                        class="aspect-square bg-white dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10 p-2 cursor-pointer hover:border-primary transition-colors overflow-hidden">
+                        <img alt="Digital Control Panel Detail" class="w-full h-full object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmFQ3adBIdWrjjwHedc8CLUIJdy6f6baBhUMJBy1vjXXDhYLXFp5ITs-xG2gBVx6vVeES2xAq9tgkGYq6EYwMS4FJZBaxCcMRLEeLFNTH51GTzpsqzpBVQKUncWa4QMsKBHxdGTOusXLlBaa4Sq3ozI8FtbePycBivDjv3rLrJkgQq8QsKuBrF8AauNLj-jZED-H18Zhwyc04ZwMQhJ3NODMddfFNulzaMJdmyg0gJj6DgWBRUZ5WxaddttpTKjMtkJiw9WHq_lg2f" />
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 space-y-8">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight mb-4">Samsung RT38 Muzlatgich, 380L, Silver</h2>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center text-[#FFC107]">
+                            <span class="material-symbols-outlined filled-icon">star</span>
+                            <span class="material-symbols-outlined filled-icon">star</span>
+                            <span class="material-symbols-outlined filled-icon">star</span>
+                            <span class="material-symbols-outlined filled-icon">star</span>
+                            <span class="material-symbols-outlined filled-icon">star</span>
+                        </div>
+                        <a class="text-sm text-primary hover:underline font-medium" href="#reviews">12 ta sharh</a>
+                        <span class="text-gray-300">|</span>
+                        <span class="text-sm text-green-500 font-semibold flex items-center gap-1">
+                            <span class="material-symbols-outlined text-base">check_circle</span>
+                            Sotuvda mavjud
+                        </span>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-baseline gap-4">
+                        <span class="text-4xl font-bold text-primary">8 500 000 so'm</span>
+                        <span class="text-lg text-gray-400 line-through">9 200 000 so'm</span>
+                    </div>
+                    <div
+                        class="bg-gray-100 dark:bg-white/5 rounded-xl p-4 border border-gray-200 dark:border-white/10 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="size-10 bg-white dark:bg-white/10 rounded-lg flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">payments</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase font-bold tracking-wider">Bo'lib to'lash</p>
+                                <p class="text-base font-bold">750 000 so'm/oy</p>
+                            </div>
+                        </div>
+                        <button class="text-primary font-bold text-sm hover:underline">Hisoblash</button>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400">Tezkor xususiyatlar</h3>
+                    <div class="grid grid-cols-2 gap-y-3">
+                        <div class="flex flex-col">
+                            <span class="text-xs text-gray-500">Brend</span>
+                            <span class="font-semibold">Samsung</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xs text-gray-500">Model</span>
+                            <span class="font-semibold">RT38</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xs text-gray-500">Rangi</span>
+                            <span class="font-semibold">Kumushrang</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xs text-gray-500">Hajmi</span>
+                            <span class="font-semibold">380 Litr</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4 pt-4">
+                    <div class="flex gap-4">
+                        <button
+                            class="flex-grow h-14 bg-primary text-white font-bold rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined">shopping_basket</span>
+                            Savatga qo'shish
+                        </button>
+                        <button
+                            class="size-14 border border-gray-200 dark:border-white/10 rounded-xl flex items-center justify-center hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-gray-600 dark:text-gray-300">favorite</span>
+                        </button>
+                        <button
+                            class="size-14 border border-gray-200 dark:border-white/10 rounded-xl flex items-center justify-center hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-gray-600 dark:text-gray-300">balance</span>
+                        </button>
+                    </div>
+                    <button
+                        class="w-full h-14 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold rounded-xl hover:bg-gray-800 dark:hover:bg-gray-100 transition-all">
+                        Hoziroq sotib olish
+                    </button>
+                    <div class="pt-4 mt-4 border-t border-gray-100 dark:border-white/10">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="size-2 rounded-full bg-green-500"></span>
+                                <span class="font-medium text-gray-600 dark:text-gray-300">Do'konda mavjud: 4 ta</span>
+                            </div>
+                        </div>
+                        <a href="ofline.html"
+                            class="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-xl border-2 border-dashed border-gray-200 dark:border-white/10 hover:border-primary/50 hover:bg-primary/5 transition-all group">
+                            <span class="material-symbols-outlined text-primary">location_on</span>
+                            <div class="flex flex-col items-start">
+                                <span
+                                    class="font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">Do'kondan
+                                    olib ketish</span>
+                                <span class="text-xs text-gray-500 dark:text-gray-400">Bepul • Bugun oling</span>
+                            </div>
+                            <span
+                                class="material-symbols-outlined ml-auto text-gray-400 group-hover:text-primary transition-colors">chevron_right</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-20 border-t border-gray-100 dark:border-white/10 pt-12">
+            <div class="flex border-b border-gray-100 dark:border-white/10 mb-8 overflow-x-auto">
+                <button
+                    class="px-8 py-4 text-primary border-b-2 border-primary font-bold whitespace-nowrap">Tavsif</button>
+                <button
+                    class="px-8 py-4 text-gray-500 hover:text-primary font-bold transition-colors whitespace-nowrap">Xarakteristikalar</button>
+                <button
+                    class="px-8 py-4 text-gray-500 hover:text-primary font-bold transition-colors whitespace-nowrap">Sharhlar
+                    (12)</button>
+            </div>
+            <div class="max-w-4xl space-y-6 text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p>Samsung RT38 muzlatgichi - bu innovatsion Twin Cooling Plus texnologiyasiga ega zamonaviy maishiy
+                    texnika vositasi bo'lib, u oziq-ovqat mahsulotlarining yangiligini uzoq vaqt saqlab turishga yordam
+                    beradi.</p>
+                <p>380 litrli keng hajm va Digital Inverter kompressori energiya samaradorligini ta'minlaydi va shovqin
+                    darajasini pasaytiradi. Silver korpusi har qanday oshxona dizayniga mukammal mos tushadi.</p>
+            </div>
+        </div>
+        <section class="mt-24 mb-12">
+            <div class="flex items-center justify-between mb-8">
+                <h3 class="text-2xl font-bold">O'xshash mahsulotlar</h3>
+                <div class="flex gap-2">
+                    <button
+                        class="size-10 border border-gray-200 dark:border-white/10 rounded-full flex items-center justify-center hover:bg-white dark:hover:bg-white/5 shadow-sm">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button
+                        class="size-10 border border-gray-200 dark:border-white/10 rounded-full flex items-center justify-center hover:bg-white dark:hover:bg-white/5 shadow-sm">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div
+                    class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl p-4 group cursor-pointer hover:shadow-xl transition-all">
+                    <div
+                        class="aspect-square rounded-xl bg-gray-50 dark:bg-white/5 mb-4 p-6 relative overflow-hidden flex items-center justify-center">
+                        <img alt="Samsung RT35 Refrigerator"
+                            class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsB-zLFL8k12j8lsBQHYzyXgQ7ociHFN7wa2i5bzW6vPy1JCGC25KSA_9NdrXea-HImMDR4dVOkWNJHI7IlZ4szCLVMetOCSFQYhNUEgagmC39XVj1yUu7IKv9qc0T9fYj3HhJk96QdSonnEs5lpxom6ZZVL4jqGcv8p74vFfaNwqhoIjkFzta-Fng0fevDw4lDwejlT5DWo1yeG62bxYJLW7ht-gt2po7pzfE-Dc1NaRxBXBc8c07wCCSpydAOWFFeAAkxYeFH5ub" />
+                        <button
+                            class="absolute top-2 right-2 size-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+                            <span class="material-symbols-outlined text-lg">favorite</span>
+                        </button>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm line-clamp-2">Samsung RT35 Muzlatgich, 350L</h4>
+                        <div class="flex items-center gap-1 text-[#FFC107]">
+                            <span class="material-symbols-outlined text-sm filled-icon">star</span>
+                            <span class="text-xs text-gray-500 font-medium">4.8 (8 ta)</span>
+                        </div>
+                        <div class="flex flex-col pt-2">
+                            <span class="text-primary font-bold text-lg">7 200 000 so'm</span>
+                            <span
+                                class="text-[10px] text-gray-400 font-bold bg-gray-100 dark:bg-white/5 px-2 py-1 rounded w-fit mt-1">630
+                                000 so'm/oy</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl p-4 group cursor-pointer hover:shadow-xl transition-all">
+                    <div
+                        class="aspect-square rounded-xl bg-gray-50 dark:bg-white/5 mb-4 p-6 relative overflow-hidden flex items-center justify-center">
+                        <img alt="LG SmartCool Refrigerator"
+                            class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhmdg2nKaaIfIi6ML41xVbAy8zuwnog29Q5Mq-G7TNj2sv8wZleVxA9vzcJ8uAyD6tt82sq8SdGn_9TwmoXg_Q41dQmo2sddLYhFPcz-iHTfduo7LASHEIJCGOQwdgb-fN096aVKQqBQgSczDTSCNdBEwg95iZuLg2gD-MO6vuWnKZAv5FMlzKrZcoIwgAD1rl_85VkwLlVDQNurhsDBIgNdNBA1vJ2a7ec45vEbZdBd7kFb78y0LEM28sli-finjn-Xpy_1oFEKb4" />
+                        <button
+                            class="absolute top-2 right-2 size-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+                            <span class="material-symbols-outlined text-lg">favorite</span>
+                        </button>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm line-clamp-2">LG SmartCool Muzlatgich, 400L</h4>
+                        <div class="flex items-center gap-1 text-[#FFC107]">
+                            <span class="material-symbols-outlined text-sm filled-icon">star</span>
+                            <span class="text-xs text-gray-500 font-medium">5.0 (15 ta)</span>
+                        </div>
+                        <div class="flex flex-col pt-2">
+                            <span class="text-primary font-bold text-lg">9 100 000 so'm</span>
+                            <span
+                                class="text-[10px] text-gray-400 font-bold bg-gray-100 dark:bg-white/5 px-2 py-1 rounded w-fit mt-1">810
+                                000 so'm/oy</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl p-4 group cursor-pointer hover:shadow-xl transition-all">
+                    <div
+                        class="aspect-square rounded-xl bg-gray-50 dark:bg-white/5 mb-4 p-6 relative overflow-hidden flex items-center justify-center">
+                        <img alt="Samsung Side-by-Side Refrigerator"
+                            class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgJVGgskrUm-1vD4kr6JtgeyGQlw8HeoLGnbuWWyN9Ti2Vuwb4zW-umjtC-exbMJhklRH4bKLf4NQ3pzi-NgPg9BndqtzbYLg7aOqbNtPYeinC0bbDze6xl8FwvBCI3CwvJ-ECUyMkPO4_a_T_5aucje5JeRY9-tB6sBI8oiX89v-0YLf6nvQMMVDy5r3jyF1a-XigQ3Jy43E3g0_q2lCtYTBFklPUl03G1Uh2AkhjUjC8KiVnCPhVsM59saMzowHQWJ3dE7ldsnxs" />
+                        <button
+                            class="absolute top-2 right-2 size-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+                            <span class="material-symbols-outlined text-lg">favorite</span>
+                        </button>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm line-clamp-2">Samsung RF-Series Side-by-Side</h4>
+                        <div class="flex items-center gap-1 text-[#FFC107]">
+                            <span class="material-symbols-outlined text-sm filled-icon">star</span>
+                            <span class="text-xs text-gray-500 font-medium">4.9 (24 ta)</span>
+                        </div>
+                        <div class="flex flex-col pt-2">
+                            <span class="text-primary font-bold text-lg">15 400 000 so'm</span>
+                            <span
+                                class="text-[10px] text-gray-400 font-bold bg-gray-100 dark:bg-white/5 px-2 py-1 rounded w-fit mt-1">1
+                                250 000 so'm/oy</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl p-4 group cursor-pointer hover:shadow-xl transition-all">
+                    <div
+                        class="aspect-square rounded-xl bg-gray-50 dark:bg-white/5 mb-4 p-6 relative overflow-hidden flex items-center justify-center">
+                        <img alt="Beko Inverter Refrigerator"
+                            class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuALOJ9W3XFOOn9sYsRF3kOI4TMONkIYH40tXUvPGSsWKuZguKkL09BoQ_3ZhfMoyUD8yAJ2sW2INdIFZTorlpLO53fvdyz8_fIqeR3_wy07ozfI-MgLfDgJY5JW9pIznVip-ibqT7vgtJIN2R-DNVVVxvotxaT2cP8k-YY_zRdXon5Zs94XuHrAjXacmuF6-6HI5Pnc8Lz3J8dbyhhJ1WMLsS0hBtLlRmOAYIR4jcvoTmNP90YLTuf5EH_LT48AjEtLijrpfrdHeEbf" />
+                        <button
+                            class="absolute top-2 right-2 size-8 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-400 hover:text-red-500">
+                            <span class="material-symbols-outlined text-lg">favorite</span>
+                        </button>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm line-clamp-2">Beko Inverter Grey Edition</h4>
+                        <div class="flex items-center gap-1 text-[#FFC107]">
+                            <span class="material-symbols-outlined text-sm filled-icon">star</span>
+                            <span class="text-xs text-gray-500 font-medium">4.7 (10 ta)</span>
+                        </div>
+                        <div class="flex flex-col pt-2">
+                            <span class="text-primary font-bold text-lg">6 800 000 so'm</span>
+                            <span
+                                class="text-[10px] text-gray-400 font-bold bg-gray-100 dark:bg-white/5 px-2 py-1 rounded w-fit mt-1">590
+                                000 so'm/oy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-background-dark text-gray-400 py-10 border-t border-white/5">
+        <div class="max-w-[1320px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div class="space-y-4">
+                <div class="flex items-center gap-2">
+                    <div class="size-7 bg-primary rounded flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-lg">bolt</span>
+                    </div>
+                    <h1 class="text-lg font-bold tracking-tight text-white uppercase">TechHouse</h1>
+                </div>
+                <p class="text-xs leading-relaxed max-w-xs">
+                    O‘zbekistondagi eng zamonaviy maishiy texnika va elektronika do‘konlar tarmog‘i.
+                </p>
+                <div class="flex gap-2">
+                    <a class="size-8 bg-white/5 rounded flex items-center justify-center hover:bg-primary transition-colors"
+                        href="#"><span class="material-symbols-outlined text-base">share</span></a>
+                    <a class="size-8 bg-white/5 rounded flex items-center justify-center hover:bg-primary transition-colors"
+                        href="#"><span class="material-symbols-outlined text-base">public</span></a>
+                    <a class="size-8 bg-white/5 rounded flex items-center justify-center hover:bg-primary transition-colors"
+                        href="#"><span class="material-symbols-outlined text-base">alternate_email</span></a>
+                </div>
+            </div>
+            <div>
+                <h6 class="font-bold text-xs text-white uppercase tracking-wider mb-4">Xaridorlarga</h6>
+                <ul class="space-y-2 text-xs">
+                    <li><a class="hover:text-primary transition-colors" href="#">Yetkazib berish</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">To‘lov turlari</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Muddatli to‘lov</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Kafolat</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-bold text-xs text-white uppercase tracking-wider mb-4">Kompaniya</h6>
+                <ul class="space-y-2 text-xs">
+                    <li><a class="hover:text-primary transition-colors" href="#">Biz haqimizda</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Do‘konlar</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Vakansiyalar</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Kontaktlar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-bold text-xs text-white uppercase tracking-wider mb-4">Kontakt</h6>
+                <ul class="space-y-3 text-xs">
+                    <li class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-lg">call</span>
+                        <span class="text-white font-semibold">+998 (71) 200-00-00</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-lg">mail</span>
+                        <span>info@techhouse.uz</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-[1320px] mx-auto px-4 border-t border-white/5 pt-6 text-center text-[10px] text-gray-500">
+            <p>© 2024 TechHouse. O'zbekiston bo'ylab xizmat ko'rsatiladi.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
