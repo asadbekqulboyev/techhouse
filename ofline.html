@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>TechHouse Store Pickup Map Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -51,6 +52,7 @@
             scrollbar-width: none;
         }
     </style>
+    <link rel="stylesheet" href="./assets/style/style.css">
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display text-[#1d130c] dark:text-white antialiased">
@@ -100,8 +102,7 @@
             </div>
         </div>
     </header>
-    <main class="flex h-[calc(100vh-140px)] overflow-hidden">
-        <!-- Sidebar: Store List (40%) -->
+    <main class="flex h-[calc(100vh-140px)] max-w-[1320px] mx-auto overflow-hidden">
         <aside
             class="w-[40%] flex flex-col bg-white dark:bg-background-dark border-r border-[#f4ece6] dark:border-[#3d2c20]">
             <!-- Search Bar -->
@@ -222,23 +223,17 @@
                 </div>
             </div>
         </aside>
-        <!-- Map Section (60%) -->
         <section class="flex-1 relative bg-[#e5e7eb] dark:bg-[#1a110a]">
-            <!-- Decorative Map Background -->
             <div class="absolute inset-0 bg-cover bg-center opacity-80" data-location="Tashkent"
                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWLSSsKcYjWXU7bI66ek9XJ8j_H9DViVQBbwv0f0v76aSeOeOE5XstDIlToFSqe0UP-LsLINxut-MI24POU-sbksGn9Sby6wUTQ6v7m-KjP6tvfN-AkAazuHYmHqvkUH2hIwb5U_QPCnbLLwSmEo10ARUrCf57YwxG6pTG9VmCOiduSjIk6MPAOENM9VkJezQG3yDyw9Xl57nBmC6TC-3Eyy91Yu2r4HyQ3vEfGfV9HwOdbmYG26tiDkl843K8RHZTEMzBag6xwyQ0');">
-                <!-- Mock Map Grid/Overlay -->
                 <div class="absolute inset-0 bg-background-light/40 dark:bg-background-dark/40 backdrop-blur-[1px]">
                 </div>
             </div>
-            <!-- Map Markers -->
-            <!-- Marker 1 (Active) -->
             <div class="absolute top-[30%] left-[45%] group cursor-pointer">
                 <div class="relative flex flex-col items-center">
                     <div class="bg-primary text-white p-2 rounded-full shadow-lg border-2 border-white animate-bounce">
                         <span class="material-symbols-outlined block">storefront</span>
                     </div>
-                    <!-- Tooltip / Popup -->
                     <div
                         class="absolute bottom-full mb-3 w-64 bg-white dark:bg-[#2d1f15] rounded-xl shadow-2xl p-0 overflow-hidden border border-primary z-10 transition-all transform origin-bottom scale-100">
                         <div class="h-24 bg-cover bg-center" data-alt="Store preview thumbnail"
@@ -313,6 +308,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./assets/main.js"></script>
 </body>
 
 </html>

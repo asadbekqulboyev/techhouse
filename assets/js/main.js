@@ -16,3 +16,15 @@ tailwind.config = {
     },
   },
 };
+let hero_slide = new Swiper(".hero_slide", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".prev",
+    prevEl: ".next",
+  },
+});

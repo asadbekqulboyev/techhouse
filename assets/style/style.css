@@ -20,3 +20,23 @@
 .dark .hero-gradient {
     background: radial-gradient(circle at 70% 50%, #1e293b 0%, #0f172a 100%);
 }
+
+.hero_slide {
+    width: 100%;
+    height: 100%;
+
+}
+
+.hero_slide .swiper-slide {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.hero_slide .swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
