@@ -82,12 +82,16 @@
                     class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
             </div>
             <div class="flex items-center gap-2">
-                <button
+                <button id="favorite_btn"
                     class="size-9 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors relative group">
                     <span class="material-symbols-outlined text-xl text-primary filled">favorite</span>
-                    <span
-                        class="absolute -top-0.5 -right-0.5 size-4 bg-primary border-2 border-white dark:border-background-dark text-white text-[9px] font-bold rounded-full flex items-center justify-center">5</span>
+
+                    <span id="favorite_count" class="absolute -top-0.5 -right-0.5 size-4 bg-primary border-2 border-white dark:border-background-dark
+                    text-white text-[9px] font-bold rounded-full flex items-center justify-center">
+                        0
+                    </span>
                 </button>
+
                 <a href="login.html"
                     class="size-9 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors">
                     <span class="material-symbols-outlined text-xl">person</span>
@@ -102,7 +106,7 @@
         </div>
     </header>
     <main>
-        <section class="relative bg-[#f4f4f4] dark:bg-[#1a1a1a] overflow-hidden">
+        <section class="relative bg-[#f4f4f4] dark:bg-[#1a1a1a] overflow-hidden hero">
             <div
                 class="w-[100%] max-w-[1320px] mx-auto px-4 grid grid-cols-1  items-center min-h-[460px] py-8 lg:py-0 relative">
                 <div class="swiper hero_slide">
@@ -256,13 +260,8 @@
                         class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">chevron_right</span>
                 </button>
                 <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20 swiper-pagination">
-                    <button class="w-10 h-1.5 rounded-full bg-primary transition-all"></button>
-                    <button
-                        class="w-2.5 h-1.5 rounded-full bg-gray-300 dark:bg-white/20 hover:bg-primary/50 transition-all"></button>
-                    <button
-                        class="w-2.5 h-1.5 rounded-full bg-gray-300 dark:bg-white/20 hover:bg-primary/50 transition-all"></button>
-                    <button
-                        class="w-2.5 h-1.5 rounded-full bg-gray-300 dark:bg-white/20 hover:bg-primary/50 transition-all"></button>
+                    <span
+                        class="swiper-pagination-bullet w-10 h-1.5 rounded-full bg-primary transition-all swiper-pagination-bullet-active"></span>
                 </div>
             </div>
         </section>
@@ -360,112 +359,125 @@
                     <div class="flex gap-3">
                         <button
                             class="size-11 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center bg-white dark:bg-background-dark hover:bg-primary hover:text-white transition-all shadow-sm">
-                            <span class="material-symbols-outlined font-bold">chevron_left</span>
+                            <span class="material-symbols-outlined font-bold left_action">chevron_left</span>
                         </button>
                         <button
                             class="size-11 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center bg-white dark:bg-background-dark hover:bg-primary hover:text-white transition-all shadow-sm">
-                            <span class="material-symbols-outlined font-bold">chevron_right</span>
+                            <span class="material-symbols-outlined font-bold right_action">chevron_right</span>
                         </button>
                     </div>
                 </div>
-                <div class="flex gap-5 overflow-visible">
-                    <div
-                        class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:shadow-xl transition-all">
+                <div class="swiper slide__products">
+                    <div class="flex overflow-visible swiper-wrapper">
                         <div
-                            class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
-                            -15%</div>
-                        <button
-                            class="absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10 group/heart">
-                            <span
-                                class="material-symbols-outlined text-xl group-active:filled group-active:text-primary">favorite</span>
-                        </button>
-                        <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
-                            <img alt="Dual Cook Oven"
-                                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUyeJHhNN7rvPXpBllgNnmjTR9XGUd3QlStYlpFmmPGtIe-BwwaufjpSjMBSdtE4WAcP3IimE1_vvxIk3ourZ7YTArV8RI_to7K9gXL-kwNqI8rdTwG8tt915M2OEmhqAelkn5FUO5hJWdf1Jll8qpUI8xnAU0qu128Q_P05ugyQ2qrRcdrXfbNhijNAkY_JtmqyluYpxbR36FGl_0hKPpJUpzrW7OG99NNQ0d_rdUSfpJniYRCOOq5uWJF8YpO32TaeKnBnMFvU6x" />
-                        </div>
-                        <div class="space-y-2">
-                            <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Premium Dual Cook Flex Pechi
-                            </h4>
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-sm font-bold text-primary">8 250 000 so‘m</span>
-                                <span class="text-[9px] text-gray-400 line-through">9 500 000</span>
-                            </div>
+                            class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:border-primary/30 transition-all swiper-slide">
+                            <div
+                                class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
+                                -15%</div>
                             <button
-                                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all">Savatga
-                                qo‘shish</button>
+                                class="product_like absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40
+                                flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10">
+                                <span class="material-symbols-outlined text-xl">favorite</span>
+                            </button>
+                            <div
+                                class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+                                <img alt="Dual Cook Oven"
+                                    class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUyeJHhNN7rvPXpBllgNnmjTR9XGUd3QlStYlpFmmPGtIe-BwwaufjpSjMBSdtE4WAcP3IimE1_vvxIk3ourZ7YTArV8RI_to7K9gXL-kwNqI8rdTwG8tt915M2OEmhqAelkn5FUO5hJWdf1Jll8qpUI8xnAU0qu128Q_P05ugyQ2qrRcdrXfbNhijNAkY_JtmqyluYpxbR36FGl_0hKPpJUpzrW7OG99NNQ0d_rdUSfpJniYRCOOq5uWJF8YpO32TaeKnBnMFvU6x" />
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Premium Dual Cook Flex Pechi
+                                </h4>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-sm font-bold text-primary">8 250 000 so‘m</span>
+                                    <span class="text-[9px] text-gray-400 line-through">9 500 000</span>
+                                </div>
+                                <button
+                                    class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all">Savatga
+                                    qo‘shish</button>
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-primary/30 dark:border-primary/50 rounded-xl p-4 relative group hover:shadow-xl transition-all shadow-md">
                         <div
-                            class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
-                            -20%</div>
-                        <button
-                            class="absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-primary transition-colors z-10">
-                            <span class="material-symbols-outlined text-xl filled">favorite</span>
-                        </button>
-                        <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
-                            <img alt="Washing Machine"
-                                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjiCDwmefDFSx1KHZ_OKnCtL4D5XEJCFbKZwLiNH5QtnhXPpCKcovBGZqsXQIDw0eYLYI0-FX17LLGVovzBctpUD23awtrPpWIhNJTdzcslkrHgkhsktQoYJ0b9ShSJj6wxkRSh_hiIf11r4UOA39t9H8XbWYNASXYsz4XQJSPOvIGm0cnUynRFgcTelXkAKDo6TCSNxsc7M4oNnLIXAhEKwSvizRpuhAgtecqymXmfFDSI0HCBzueZmaMaV6yVD14ZcPE5BSZ10Al" />
-                        </div>
-                        <div class="space-y-2">
-                            <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Vivace AI DD Kir yuvish
-                                mashinasi</h4>
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-sm font-bold text-primary">5 120 000 so‘m</span>
-                                <span class="text-[9px] text-gray-400 line-through">6 400 000</span>
-                            </div>
+                            class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border hover:border-primary/30 dark:border-primary/50 rounded-xl p-4 relative group  transition-all shadow-md  swiper-slide">
+                            <div
+                                class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
+                                -20%</div>
                             <button
-                                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all">Savatga
-                                qo‘shish</button>
+                                class="product_like absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40
+                                flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10">
+                                <span class="material-symbols-outlined text-xl">favorite</span>
+                            </button>
+                            <div
+                                class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+                                <img alt="Washing Machine"
+                                    class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjiCDwmefDFSx1KHZ_OKnCtL4D5XEJCFbKZwLiNH5QtnhXPpCKcovBGZqsXQIDw0eYLYI0-FX17LLGVovzBctpUD23awtrPpWIhNJTdzcslkrHgkhsktQoYJ0b9ShSJj6wxkRSh_hiIf11r4UOA39t9H8XbWYNASXYsz4XQJSPOvIGm0cnUynRFgcTelXkAKDo6TCSNxsc7M4oNnLIXAhEKwSvizRpuhAgtecqymXmfFDSI0HCBzueZmaMaV6yVD14ZcPE5BSZ10Al" />
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Vivace AI DD Kir yuvish
+                                    mashinasi</h4>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-sm font-bold text-primary">5 120 000 so‘m</span>
+                                    <span class="text-[9px] text-gray-400 line-through">6 400 000</span>
+                                </div>
+                                <button
+                                    class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all">Savatga
+                                    qo‘shish</button>
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:shadow-xl transition-all">
                         <div
-                            class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
-                            -10%</div>
-                        <button
-                            class="absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10 group/heart">
-                            <span
-                                class="material-symbols-outlined text-xl group-active:filled group-active:text-primary">favorite</span>
-                        </button>
-                        <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
-                            <img alt="Fridge"
-                                class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM45zXkPAyE0yWHaNfBImcb4DsHeF6TRg3FyIUsDsXYazjsg-wDanKDezt25nkdjpb10LXC-q_AvmQvgDuxeWN1XFqErq_iME6axk4Rj4dl3Nz392ZYCqWFBCb3QpYt5fJSkuYF7fyI2JOexBlDQT7OpW41A0LUO5skW6AJohbmMRi6U3Gk-HLpr6bKITAke5rtjEYhgOfd_LzmhsV2Qs7dMlozMoxlLQJ-DMUVI--46EIfe1f8OzRViynyXZ4T3Gxrl09XwExMXd4" />
-                        </div>
-                        <div class="space-y-2">
-                            <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Smart Serie 6 Muzlatgichi</h4>
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-sm font-bold text-primary">12 000 000 so‘m</span>
-                                <span class="text-[9px] text-gray-400 line-through">13 330 000</span>
-                            </div>
+                            class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:border-primary/30 transition-all  swiper-slide">
+                            <div
+                                class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
+                                -10%</div>
                             <button
-                                class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all">Savatga
-                                qo‘shish</button>
+                                class="product_like absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40
+                                flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10">
+                                <span class="material-symbols-outlined text-xl">favorite</span>
+                            </button>
+                            <div
+                                class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+                                <img alt="Fridge"
+                                    class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM45zXkPAyE0yWHaNfBImcb4DsHeF6TRg3FyIUsDsXYazjsg-wDanKDezt25nkdjpb10LXC-q_AvmQvgDuxeWN1XFqErq_iME6axk4Rj4dl3Nz392ZYCqWFBCb3QpYt5fJSkuYF7fyI2JOexBlDQT7OpW41A0LUO5skW6AJohbmMRi6U3Gk-HLpr6bKITAke5rtjEYhgOfd_LzmhsV2Qs7dMlozMoxlLQJ-DMUVI--46EIfe1f8OzRViynyXZ4T3Gxrl09XwExMXd4" />
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Smart Serie 6 Muzlatgichi
+                                </h4>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-sm font-bold text-primary">12 000 000 so‘m</span>
+                                    <span class="text-[9px] text-gray-400 line-through">13 330 000</span>
+                                </div>
+                                <button
+                                    class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all">Savatga
+                                    qo‘shish</button>
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group opacity-40 hover:opacity-100 transition-all cursor-pointer">
                         <div
-                            class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
-                            -25%</div>
-                        <div class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
-                            <img alt="Microwave" class="w-full h-full object-contain mix-blend-multiply"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2075p1YR0abIwccxiLFpX-DKTMyat5hndXozp2dc6ywQ-PGCwFVLCS2lMi2a6nqtKJT6LPKItNz6F_UKPAKbwCpVOxLUOwwwHRGNE9u1Neo10a0YHZsURfGZa6USNe82aSoOJUgOIoYBd_N_mD3no_s47MwKWgM8A7eTIyXBBTWyHNiGfj6grFOJs_jjsDtC5w9GB3SwtcEjwLJ4tedyVjxDasZwviH0zCUfm5wYnWYWZuNBxlD4MZVtvtbmRywd-Sg90JQo8g7fv" />
-                        </div>
-                        <div class="space-y-2">
-                            <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Kompakt Mikroto‘lqinli pech 20L
-                            </h4>
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-sm font-bold text-primary">1 100 000 so‘m</span>
+                            class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group opacity-40 hover:opacity-1 transition-all cursor-pointer hover:border-primary/30 transition-all  swiper-slide">
+                            <div
+                                class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
+                                -25%</div>
+                            <div
+                                class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+                                <img alt="Microwave" class="w-full h-full object-contain mix-blend-multiply"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2075p1YR0abIwccxiLFpX-DKTMyat5hndXozp2dc6ywQ-PGCwFVLCS2lMi2a6nqtKJT6LPKItNz6F_UKPAKbwCpVOxLUOwwwHRGNE9u1Neo10a0YHZsURfGZa6USNe82aSoOJUgOIoYBd_N_mD3no_s47MwKWgM8A7eTIyXBBTWyHNiGfj6grFOJs_jjsDtC5w9GB3SwtcEjwLJ4tedyVjxDasZwviH0zCUfm5wYnWYWZuNBxlD4MZVtvtbmRywd-Sg90JQo8g7fv" />
                             </div>
-                            <button
-                                class="w-full h-9 bg-gray-100 dark:bg-white/5 text-[11px] font-bold rounded-lg">Savatga
-                                qo‘shish</button>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Kompakt Mikroto‘lqinli pech
+                                    20L
+                                </h4>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-sm font-bold text-primary">1 100 000 so‘m</span>
+                                </div>
+                                <button class="product_like absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40
+    flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10">
+                                    <span class="material-symbols-outlined text-xl">favorite</span>
+                                </button>
+                                <button
+                                    class="w-full h-9 bg-gray-100 dark:bg-white/5 text-[11px] font-bold rounded-lg">Savatga
+                                    qo‘shish</button>
+                            </div>
                         </div>
                     </div>
                 </div>
