@@ -67,12 +67,13 @@
             </div>
             <nav class="hidden xl:flex items-center gap-6 whitespace-nowrap">
                 <a class="text-sm font-semibold capitalize hover:text-primary transition-colors"
-                    href="#">Kategoriyalar</a>
-                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Aksiyalar</a>
-                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Brendlar</a>
+                    href="#categories">Kategoriyalar</a>
                 <a class="text-sm font-semibold capitalize hover:text-primary transition-colors"
-                    href="#">Yangiliklar</a>
-                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors" href="#">Kontaktlar</a>
+                    href="#action">Aksiyalar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors"
+                    href="#brands">Brendlar</a>
+                <a class="text-sm font-semibold capitalize hover:text-primary transition-colors"
+                    href="login.html">Kontaktlar</a>
             </nav>
             <div class="flex-1 max-w-md relative hidden md:block">
                 <input
@@ -96,12 +97,12 @@
                     class="size-9 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors">
                     <span class="material-symbols-outlined text-xl">person</span>
                 </a>
-                <button
-                    class="size-9 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-full transition-all relative">
+                <a href="./cart.html"
+                    class="size-9 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-full transition-all relative flex align-center justify-center">
                     <span class="material-symbols-outlined text-xl">shopping_cart</span>
                     <span
-                        class="absolute -top-0.5 -right-0.5 size-4 bg-primary border-2 border-white dark:border-background-dark text-white text-[9px] font-bold rounded-full flex items-center justify-center">3</span>
-                </button>
+                        class="absolute  -right-0.5 size-4 bg-primary border-2 border-white dark:border-background-dark text-white text-[9px] font-bold rounded-full flex items-center justify-center ">3</span>
+                </a>
             </div>
         </div>
     </header>
@@ -112,6 +113,40 @@
                 class="w-[100%] max-w-[1320px] mx-auto px-4 grid grid-cols-1  items-center min-h-[460px] py-8 lg:py-0 relative">
                 <div class="swiper hero_slide">
                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="space-y-6 z-10 relative">
+                                <div
+                                    class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-widest">
+                                    Yangi kolleksiya 2024
+                                </div>
+                                <h2
+                                    class="text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#1d130c] dark:text-white">
+                                    Premium oshxona <br /><span class="text-primary">texnikasi</span> bilan qulaylik
+                                </h2>
+                                <p class="text-base text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed">
+                                    Sizning uyingiz uchun eng so'nggi rusumdagi sovutgich va pechlar. Sifat va kafolat
+                                    bilan
+                                    hayotingizni yengillashtiring.
+                                </p>
+                                <div class="flex items-center gap-4 pt-2">
+                                    <button
+                                        class="px-8 h-12 bg-primary text-white font-bold rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all flex items-center gap-2">
+                                        Batafsil <span class="material-symbols-outlined text-xl">east</span>
+                                    </button>
+                                    <a href="#categories"
+                                        class="px-8 h-12 flex  border border-gray-300 dark:border-white/10 font-bold rounded-full hover:bg-white dark:hover:bg-white/5 transition-all">
+                                        Katalog
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="relative lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-1/2">
+                                <img alt="High-end Kitchen" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwlZOKjZxcXaDDEndP2vzVglVjVZMgoNb2D8e7Aog3Zb2Fm1oDGB9LgIITbjnBSgXZH1PD564FahBzaBrqn7Bju56wpn0O4_RijXfkP8hIqfaBV518Fqdn2qmkVee_nJBbojqpk9-LU6tGn8SkynchTvHYKzQKPosxsTlmj-GE6HCptWfUUxRExspxRiAvrJjRAiLKmQ-1o-t2fiRmNF6CMBeSknyawyCnhuXHzKbkxEw4kAjVQZ1Uis9YK0MEvistQ_116Dw4CO_Y" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-[#f4f4f4] via-transparent to-transparent dark:from-[#1a1a1a] hidden lg:block">
+                                </div>
+                            </div>
+                        </div>
                         <div class="swiper-slide">
                             <div class="space-y-6 z-10 relative">
                                 <div
@@ -276,13 +311,13 @@
                 </div>
             </div>
         </section>
-        <section class="py-8 max-w-[1320px] mx-auto px-4">
+        <section class="py-8 max-w-[1320px] mx-auto px-4" id="categories">
             <div class="flex items-center justify-between mb-6">
                 <h3 class="text-xl font-bold tracking-tight">Kategoriyalar</h3>
                 <a class="text-sm font-bold text-primary hover:underline" href="#">Barchasi</a>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
-                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                <a href="./catalog.html" class="flex flex-col items-center gap-3 group cursor-pointer">
                     <div
                         class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
                         <span
@@ -293,9 +328,9 @@
                     <span class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">
                         Aqlli uy texnikasi
                     </span>
-                </div>
+                </a>
 
-                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                <a href="./catalog.html" class="flex flex-col items-center gap-3 group cursor-pointer">
                     <div
                         class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
                         <span
@@ -303,8 +338,8 @@
                     </div>
                     <span
                         class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Oshxona</span>
-                </div>
-                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                </a>
+                <a href="./catalog.html" class="flex flex-col items-center gap-3 group cursor-pointer">
                     <div
                         class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
                         <span
@@ -312,8 +347,8 @@
                     </div>
                     <span class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Kir
                         yuvish</span>
-                </div>
-                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                </a>
+                <a href="./catalog.html" class="flex flex-col items-center gap-3 group cursor-pointer">
                     <div
                         class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
                         <span
@@ -321,8 +356,8 @@
                     </div>
                     <span
                         class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Sovutish</span>
-                </div>
-                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                </a>
+                <a href="./catalog.html" class="flex flex-col items-center gap-3 group cursor-pointer">
                     <div
                         class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
                         <span
@@ -330,8 +365,8 @@
                     </div>
                     <span
                         class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Isitish</span>
-                </div>
-                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                </a>
+                <a href="./catalog.html" class="flex flex-col items-center gap-3 group cursor-pointer">
                     <div
                         class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
                         <span
@@ -339,8 +374,8 @@
                     </div>
                     <span
                         class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Tozalash</span>
-                </div>
-                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                </a>
+                <a href="./catalog.html" class="flex flex-col items-center gap-3 group cursor-pointer">
                     <div
                         class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
                         <span
@@ -348,8 +383,8 @@
                     </div>
                     <span
                         class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Aksessuarlar</span>
-                </div>
-                <div class="flex flex-col items-center gap-3 group cursor-pointer">
+                </a>
+                <a href="./catalog.html" class="flex flex-col items-center gap-3 group cursor-pointer">
                     <div
                         class="size-20 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm flex items-center justify-center group-hover:border-primary transition-all duration-300">
                         <span
@@ -357,10 +392,10 @@
                     </div>
                     <span
                         class="text-[11px] font-semibold text-center group-hover:text-primary transition-colors">Smartfonlar</span>
-                </div>
+                </a>
             </div>
         </section>
-        <section class="py-10 bg-white dark:bg-white/5 relative overflow-hidden">
+        <section class="py-10 bg-white dark:bg-white/5 relative overflow-hidden" id="action">
             <div class="max-w-[1320px] mx-auto px-4">
                 <div class="flex items-center justify-between mb-6">
                     <div>
@@ -465,7 +500,7 @@
                             </div>
                         </div>
                         <div
-                            class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group opacity-40 hover:opacity-1 transition-all cursor-pointer hover:border-primary/30 transition-all  swiper-slide">
+                            class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group transition-all cursor-pointer hover:border-primary/30 transition-all  swiper-slide">
                             <div
                                 class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
                                 -25%</div>
@@ -487,6 +522,62 @@
                                 </button>
                                 <button
                                     class="w-full h-9 bg-gray-100 dark:bg-white/5 text-[11px] font-bold rounded-lg">Savatga
+                                    qo‘shish</button>
+                            </div>
+                        </div>
+                        <div
+                            class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border border-gray-100 dark:border-white/10 rounded-xl p-4 relative group hover:border-primary/30 transition-all swiper-slide">
+                            <div
+                                class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
+                                -15%</div>
+                            <button
+                                class="product_like absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40
+                                flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10">
+                                <span class="material-symbols-outlined text-xl">favorite</span>
+                            </button>
+                            <div
+                                class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+                                <img alt="Dual Cook Oven"
+                                    class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUyeJHhNN7rvPXpBllgNnmjTR9XGUd3QlStYlpFmmPGtIe-BwwaufjpSjMBSdtE4WAcP3IimE1_vvxIk3ourZ7YTArV8RI_to7K9gXL-kwNqI8rdTwG8tt915M2OEmhqAelkn5FUO5hJWdf1Jll8qpUI8xnAU0qu128Q_P05ugyQ2qrRcdrXfbNhijNAkY_JtmqyluYpxbR36FGl_0hKPpJUpzrW7OG99NNQ0d_rdUSfpJniYRCOOq5uWJF8YpO32TaeKnBnMFvU6x" />
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Premium Dual Cook Flex Pechi
+                                </h4>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-sm font-bold text-primary">8 250 000 so‘m</span>
+                                    <span class="text-[9px] text-gray-400 line-through">9 500 000</span>
+                                </div>
+                                <button
+                                    class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all">Savatga
+                                    qo‘shish</button>
+                            </div>
+                        </div>
+                        <div
+                            class="min-w-[300px] w-[300px] bg-white dark:bg-background-dark border hover:border-primary/30 dark:border-primary/50 rounded-xl p-4 relative group  transition-all shadow-md  swiper-slide">
+                            <div
+                                class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full z-10">
+                                -20%</div>
+                            <button
+                                class="product_like absolute top-3 right-3 size-8 rounded-full bg-white/80 dark:bg-black/40
+                                flex items-center justify-center text-gray-400 hover:text-primary transition-colors z-10">
+                                <span class="material-symbols-outlined text-xl">favorite</span>
+                            </button>
+                            <div
+                                class="w-full aspect-square bg-gray-50 dark:bg-white/5 rounded-lg mb-4 overflow-hidden">
+                                <img alt="Washing Machine"
+                                    class="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjiCDwmefDFSx1KHZ_OKnCtL4D5XEJCFbKZwLiNH5QtnhXPpCKcovBGZqsXQIDw0eYLYI0-FX17LLGVovzBctpUD23awtrPpWIhNJTdzcslkrHgkhsktQoYJ0b9ShSJj6wxkRSh_hiIf11r4UOA39t9H8XbWYNASXYsz4XQJSPOvIGm0cnUynRFgcTelXkAKDo6TCSNxsc7M4oNnLIXAhEKwSvizRpuhAgtecqymXmfFDSI0HCBzueZmaMaV6yVD14ZcPE5BSZ10Al" />
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-xs leading-snug line-clamp-2 h-8">Vivace AI DD Kir yuvish
+                                    mashinasi</h4>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-sm font-bold text-primary">5 120 000 so‘m</span>
+                                    <span class="text-[9px] text-gray-400 line-through">6 400 000</span>
+                                </div>
+                                <button
+                                    class="w-full h-9 bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white text-[11px] font-bold rounded-lg transition-all">Savatga
                                     qo‘shish</button>
                             </div>
                         </div>
@@ -741,7 +832,7 @@
                 </div>
             </div>
         </section>
-        <section class="py-16 max-w-[1320px] mx-auto px-4">
+        <section class="py-16 max-w-[1320px] mx-auto px-4" id="brands">
             <h3 class="text-2xl font-bold mb-10 text-center tracking-tight">Bizning brendlar</h3>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 <div class="group cursor-pointer">
