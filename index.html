@@ -12,7 +12,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -56,6 +55,7 @@
 </head>
 
 <body class="dark:bg-background-dark dark:text-white wrapper">
+    <!-- header -->
     <header
         class="sticky top-0 z-50 h-16 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-white/5">
         <div class="max-w-[1320px] mx-auto h-full px-4 flex items-center justify-between gap-8">
@@ -105,6 +105,7 @@
             </div>
         </div>
     </header>
+    <!-- main -->
     <main>
         <section class="relative bg-[#f4f4f4] dark:bg-[#1a1a1a] overflow-hidden hero">
             <div
@@ -251,13 +252,23 @@
                 </div>
                 <button
                     class="absolute left-4 top-1/2 -translate-y-1/2 size-12 rounded-full bg-white/90 dark:bg-black/40 backdrop-blur shadow-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all z-20 group next">
-                    <span
-                        class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">chevron_left</span>
+                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.83333 11.6667L0 5.83332L5.83333 -1.04904e-05L7.19444 1.3611L2.72222 5.83332L7.19444 10.3055L5.83333 11.6667Z"
+                            fill="#1D130C" />
+                    </svg>
+
+
                 </button>
                 <button
                     class="absolute right-4 top-1/2 -translate-y-1/2 size-12 rounded-full bg-white/90 dark:bg-black/40 backdrop-blur shadow-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all z-20 group prev">
-                    <span
-                        class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">chevron_right</span>
+                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4.47222 5.83332L0 1.3611L1.36111 -1.04904e-05L7.19444 5.83332L1.36111 11.6667L0 10.3055L4.47222 5.83332Z"
+                            fill="#1D130C" />
+                    </svg>
+
+
                 </button>
                 <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20 swiper-pagination">
                     <span
@@ -784,6 +795,7 @@
             </div>
         </section>
     </main>
+    <!-- footer -->
     <footer class="bg-background-dark text-gray-400 py-10 border-t border-white/5">
         <div class="max-w-[1320px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             <div class="space-y-4">

@@ -69,6 +69,11 @@
     background: #FF6600;
 }
 
+.hero .next:hover svg path,
+.hero .prev:hover svg path {
+    fill: #fff;
+}
+
 @media (max-width: 768px) {
 
     .hero .next,
