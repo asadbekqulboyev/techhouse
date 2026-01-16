@@ -19,6 +19,10 @@ tailwind.config = {
 let hero_slide = new Swiper(".hero_slide", {
   slidesPerView: 1,
   spaceBetween: 10,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
